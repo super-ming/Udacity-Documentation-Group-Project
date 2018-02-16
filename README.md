@@ -7,7 +7,7 @@ The best way to learn is to be forced to teach others, so this project aims at g
 <h3> First...a few things</h2>
 <ul>
   <li>Be sure to have a text editor installed  (ie. Atom or Sublime)</li>
-  <li>Install git on your computer. If you've never used Git, take the time to go through <a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775"> Udacity's Intro to Git and Github </a> course to learn how to use it. A lot of the reason for this project is to give newbies a chance to learn how to collaborate, so do yourself a favor and take the time to finish that three lesson course.</li>
+  <li>Install git on your computer. If you've never used Git, take the time to go through <a target="_blank" href="https://www.udacity.com/course/how-to-use-git-and-github--ud775"> Udacity's Intro to Git and Github </a> course to learn how to use it. A lot of the reason for this project is to give newbies a chance to learn how to collaborate, so do yourself a favor and take the time to finish that three lesson course.</li>
   <li>Frameworks in use on this project include Bootstrap 4 and JQuery 3.3.1</li>
 </ul>
   <h3> So, what are you contributing?</h4>
@@ -30,4 +30,4 @@ Each "page" should go in the Topics folder. When writing your code, be sure to u
 If anything is false or not clear, feel free to contact me or open an issue in GitHubm, or create a reply on our Udacity Forum.
 
 <h4>License</h4>
-<a href="license.md">License</a>
+<a target="_blank" href="license.md">License</a>
