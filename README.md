@@ -11,14 +11,16 @@ The best way to learn is to be forced to teach others, so this project aims at g
   <li>Frameworks in use on this project include Bootstrap 4 and JQuery 3.3.1</li>
 </ul>
   <h3> So, what are you contributing?</h4>
-  <p> The goal is to give you an opportunity to code, collaborate, and convey. By convey I mean, convey your knowledge of a part of Javascript by teaching others about it. We never truly know something until we know it so well we can teach others about it. So, you are to take a topic and find a way to explain it to the average simpleton. Yes you'll need to include the technical explanation for how to implement your topic, but you should strive to find a way to teach this using Plain English and examples that help illustrate the main points. If you participate in that Udacity Intro to Git and Github course you'll see them use recipes as an illustration for how to teach concepts that are quite complex. That is a great example of what we're looking for. Start from square one, and help the reader understand what you understand.</p>
+  <p> The goal is to give you an opportunity to code, collaborate, and convey. By convey I mean, convey your knowledge of a part of Javascript by teaching others about it. We never truly know something until we know it so well we can teach others about it. So, you are to take a topic and find a way to explain it to the average simpleton. Yes, you'll need to include the technical explanation for how to implement your topic, but you should strive to find a way to teach this using Plain English and examples that help illustrate the main points. If you participate in that Udacity Intro to Git and Github course you'll see them use recipes as an illustration for how to teach concepts that are quite complex. That is a great example of what we're looking for. Start from square one, and help the reader understand what you understand.</p>
   <h3>I've thought it out...I know what to do...how do I contribute now?</h3>
   <ul>
-  <li>1- Create a fork of the current repository to get started on the project. Then, be sure to create a branch of the master for making additions to the index.html on that branch. </li>
-<li>2- On index.html, be sure to add your topic in the navigation bar, following alphabetic order.</li>
+  <li>1- Create a fork of the current repository to get started on the project. Then, be sure to create a branch of the master for making your changes. </li>
+<li>2- On index.html, be sure to add your topic in the navigation bar, following alphabetic order, and link it to your page.</li>
+  <li> For the sake of simplicity, I don't believe we need too many individual comments added into the index.html, since you're mostly only adding a link to your page. But, on your indidividual pages please include comments in your code.</li>
   <li>3- Be sure to use commit messages to show the changes you make to your branched version of index.html.</li>
-<li>4- Working off of the template-page, write the code for your page.</li>
-<li>5- Retitle this new page following the pattern of topic-name-page (ie. "foreach-page.html", or "for-loop-page.html").</li> 
+<li>4- Working off of the template-page.html, write the code for your page.</li>
+<li>5- Retitle this new page following the pattern of topic-name-page (ie. "foreach-page.html", or "for-loop-page.html").</li>
+  <li> 6- Make sure your page uses the stylesheet.css and if your page needs individual elements not currently found then please make those additions with commit messages detailing your additions.</li>
 <li>6- Make a Pull Request to initiate discussion about your commits. </li>
 <li> 7- Wait for comments from the team reviewing the submissions to ensure the style pages are consistent.</li>
 </ul>
