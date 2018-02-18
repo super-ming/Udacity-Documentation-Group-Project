@@ -1,3 +1,48 @@
-.body{
-	patience...patience
+.doc-masthead{
+	text-align: left;
+	color: black;
+	text-decoration: none;
+}
+#landing-doc-masthead{
+	text-align: center;
+}
+.doc-header, .bio{
+	text-align: center;
+}
+.bio{
+	margin-top: 5px;
+}
+.card, .doc-header, .doc-masthead{
+	margin-bottom: 2%;
+	
+}
+
+#logo{
+	max-width: 40px;
+	max-height: 40px;
+	align: middle;
+}
+.doc-masthead{
+	margin-top: 2%;
+	margin-left: 2%;
+	color: #35414C;
+}
+body{
+	font-family: Open Sans, Helvetica, sans-serif;
+}
+.card-header{
+	background-color: #DAE3E9;
+	color: #35414C;
+	font-weight: bold;
+}
+.doc-sidebar{
+	color: #2DB2E1;
+}
+.doc-header{
+	text-decoration: underline #35414C;
+	color: #35414C;
+}
+.contribute{
+	text-align: center;
+	margin-bottom: 2%;
 }
