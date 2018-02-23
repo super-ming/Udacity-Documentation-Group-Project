@@ -1,20 +1,30 @@
 .doc-masthead{
-	text-align: left;
 	color: black;
 	text-decoration: none;
+	height: 150px;
+	max-height: 15%;
 }
 #landing-doc-masthead{
 	text-align: center;
 }
+#template-doc-masthead{
+	text-align: left;
+}
 .doc-header, .bio{
 	text-align: center;
+}
+h1{
+	font-size: 40px;
+	color: rgba(131, 132, 132, 0.8);
+	margin-left: 2%;
+	vertical-align: middle;
+	line-height: 150px;
 }
 .bio{
 	margin-top: 5px;
 }
-.card, .doc-header, .doc-masthead{
+.card, .doc-header{
 	margin-bottom: 2%;
-	
 }
 
 #logo{
@@ -22,27 +32,37 @@
 	max-height: 40px;
 	align: middle;
 }
-.doc-masthead{
-	margin-top: 2%;
-	margin-left: 2%;
-	color: #35414C;
-}
+
 body{
 	font-family: Open Sans, Helvetica, sans-serif;
 }
 .card-header{
-	background-color: #DAE3E9;
-	color: #35414C;
+	background: linear-gradient(to right, rgba(35, 172, 252, 0.5), rgba(239, 131, 227, 0.4));
+	color: white;
 	font-weight: bold;
-}
-.doc-sidebar{
-	color: #2DB2E1;
+	font-size: 20px;
 }
 .doc-header{
-	text-decoration: underline #35414C;
-	color: #35414C;
+	color: #6b7377;
+}
+.flex-column{
+	padding-right: 50%;
+	padding-left: 5%;
+}
+.nav-link{
+	color: #2DB2E1;
+	text-align: left;
+}
+.nav-link:hover {
+	background-color: rgba(186, 188, 188, 0.2);
 }
 .contribute{
 	text-align: center;
 	margin-bottom: 2%;
+}
+#youTube{
+	max-width: 400px;
+	max-height: 300px;
+	display:block;
+    margin:auto;
 }
