@@ -23,12 +23,14 @@ The best way to learn is to be forced to teach others, so this project aims at g
   <li>Create a new branch to work on:
     git checkout -b branchName</li>
   </ul>
-  <h3> So, what are you contributing?</h4>
+  <h3> So, what are you contributing?</h3>
   <p> The goal is to give you an opportunity to code, collaborate, and convey. By convey I mean, convey your knowledge of a part of Javascript by teaching others about it. We never truly know something until we know it so well we can teach others about it. So, you are to take a topic and find a way to explain it to the average simpleton. Yes, you'll need to include the technical explanation for how to implement your topic, but you should strive to find a way to teach this using Plain English and examples that help illustrate the main points. If you participate in that Udacity Intro to Git and Github course you'll see them use recipes as an illustration for how to teach concepts that are quite complex. That is a great example of what we're looking for. Start from square one, and help the reader understand what you understand.</p>
   <h3>I've thought it out...I know what to do...how do I contribute now?</h3>
   <ol>
   <li>Create a fork of the current repository to get started on the project. Then, be sure to create a branch of the master for making your changes. </li>
-<li>In the index.html file, add your topic in the navigation bar (using alphabetic order) and link it to your page.</li>
+  <li>Take the html in template.html and copy it into a new html page titled your topic title. Save that into the topics file.</li>
+  <li>Do not change the code on the template.html, but in your newly created html copied from template, go ahead and enter your code and explanation of the topic.</li>
+<li>We need to link your topic page to the rest of the project. In the index.html file, add your topic in the navigation bar (using alphabetic order) and link it to your page.</li>
   <li>Adding navigation to your topic will also need to be added to all of the individual topic pages, as well as the topic-autocomplete.js</li>
   <li> For the sake of simplicity, I don't believe we need too many individual comments added into the index.html, since you're mostly only adding a link to your page. But, on your indidividual pages please include comments in your code.</li>
   <li>Be sure to use commit messages to show the changes you make to your branched version of index.html.</li>
