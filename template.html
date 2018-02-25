@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <head>
+	<meta charset="utf-8"/>
+	<!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- CSS style guide -->
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+	<!-- jQuery CDN -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<!-- JS file -->
+	<script src="js/jquery.easy-autocomplete.min.js"></script> 
+	<!-- CSS file -->
+	<link rel="stylesheet" href="css/easy-autocomplete.min.css"> 
+	<!-- Additional CSS Themes file - not required-->
+	<link rel="stylesheet" href="css/easy-autocomplete.themes.min.css"> 
+    <script type="text/javascript" src="js/topic-autocomplete.js"></script>
 	</head>
 	<body>
+		<!-- Full header with title and Udacity logo -->
 		<div id="template-doc-masthead" class="doc-masthead">
 			<h1>Doc<img id="logo" src="img/udacity.svg">mentation Project</h1>
 		</div>
 		<div class="doc-header"><h2>Topic</h2>
 		</div>
+		<!-- Main body of the page, including the navigation -->
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-2 doc-sidebar">
+					<!-- Navigation section -->
 					<nav class="nav flex-column">
+						<input id="template-links" />
 						<a class="nav-link" href="index.html">Home</a>
  						<a class="nav-link" href="#">Topic A</a>
   						<a class="nav-link" href="#">Topic B</a>
@@ -20,6 +36,7 @@
   						<a class="nav-link" href="#">Topic D</a>
 					</nav>
 				</div>
+				<!-- Here begins the various cards for the sections of the topic -->
 				<div class="col-sm-9 doc-main">
 					<div class="card">
   						<div class="card-header">Intro</div>
@@ -70,6 +87,7 @@
       					</div>
 					</div>
 				</div>
+				<!-- Bottom link for new contibutors to go to Github repo -->
 				<div class="contribute col-sm-12">
 				<p > Want to contribute? Go <a href="https://github.com/dalumiller/Udacity-Documentation-Group-Project">here</a> to get started.</p>
 				</div>
