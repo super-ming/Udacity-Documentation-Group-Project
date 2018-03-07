@@ -18,7 +18,7 @@ The best way to learn is to be forced to teach others, so this project aims at g
   <li>To clone the repo using SSH, use the command:
     git clone git@github.com:yourUserName/Udacity-Documentation-Group-Project.git</li>
   <li>To clone the repo using HTTPS, use the command:
-    git clone https://github.com/yourUserName/Udacity-Documentation-Group-Project.git</li>
+    git clone https://github.com/dalumiller/Udacity-Documentation-Group-Project.git</li>
   <li>This command creates a subdirectory named after the repo in the your working projects directory.</li>
   <li>Create a new branch to work on:
     git checkout -b branchName</li>
