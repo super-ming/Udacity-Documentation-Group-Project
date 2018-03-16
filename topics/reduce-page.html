@@ -55,8 +55,30 @@
 					<div class="card">
   						<div class="card-header">Illustration</div>
   						<div class="card-body">
-      					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      					</div>
+      					<p>As we’ve discussed, the unique beauty of <code>reduce()</code> is that it allows you to gather data from an array and use that data to create a cumulative value. This is possible because the <code>reduce()</code> method’s callback function is assigned a special “accumulator” parameter, which stores the cumulative value that you create from array item data.</p>
+
+								<p><code>arr.reduce(function(accumulator, currentValue, currentIndex, array){</code></p>
+
+								<p><code>//Callback code</code></p>
+
+								<p><code>});</code></p>
+
+								<p>You’ll write your code so that the value of the accumulator parameter gets updated every time the callback runs on an array item, thus incorporating specific information from that item into the accumulator’s value. The final value of this special accumulator parameter is what gets returned once <code>reduce()</code> finishes executing.</p>
+
+								<p>Here is a very basic illustration of how the callback’s accumulator parameter works:</p>
+
+								<p>Picture yourself apple picking with five of your friends on a sunny fall day. Let’s say that you have a bit of a competitive streak, so you decide that you want to pick the exact same number of apples as all the rest of your friends combined. Each of your friends goes off to pick apples, while you sit under a tree and wait for them to come back.</p>
+
+								<p>Soon your friends return and line up their baskets. You now have an “array” of five baskets, each with a different number of apples in it. So you pick up your own empty basket and get to work. Here, your empty basket will act as the “accumulator,” with a starting value of 0.</p>
+
+								<p>You see that your first friend’s basket contains 6 apples. So you go and pick 6 apples, putting them into your own empty basket. You come back and look at the second basket, which contains 10 apples. You go and pick 10 apples, so now your basket has a total of 16 apples.</p>
+
+								<p>After repeating this process for each of your friends’ baskets, your basket is overflowing with a total of 43 apples! Just as you planned, your basket now contains the same number of apples as all of your friends’ baskets combined.</p>
+
+								<p>Like the basket in this example, the accumulator parameter in your <code>reduce()</code> callback will contain a cumulative value that’s created based on information gathered from each item in the array. If we were to think of this apple-picking example in <code>reduce()</code> terms, your “return” value is 43 apples.</p>
+
+								<p>Note that this is only a very basic example of how <code>reduce()</code> works. Since an array can contain many different types of data, and <code>reduce()</code> can return many different types of data, there are far more complex ways that the data in an accumulator might be collected and combined.</p>
+      				</div>
 					</div>
 					<div class="card">
   						<div class="card-header">The Call</div>
