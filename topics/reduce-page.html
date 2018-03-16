@@ -83,8 +83,80 @@
 					<div class="card">
   						<div class="card-header">The Call</div>
   						<div class="card-body">
-      					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      					</div>
+      					<p>Now that we understand the basic concept of <code>reduce()</code>, dig into how it works in practice:</p>
+
+								<p><code>var total = [1, 2, 3, 4, 5].reduce(function(accumulator, currentValue, currentIndex, array){</code></p>
+
+								<p><code>return accumulator + currentValue;</code></p>
+
+								<p><code>}, 0);</code></p>
+
+								<p>Here, the value of <code>total</code> will be the return value of the <code>reduce()</code> method. The <code>reduce()</code> method’s return value is the final value of the accumulator parameter once the callback has finished iterating over the entire array. In this case the return is 15, the total sum of all the numbers in the array. So the value of <code>total</code> will be 15</p>
+
+								<p>Let’s walk through how we got this outcome, starting with an explanation of the optional second <code>reduce()</code> argument. You’ll notice that after the callback function, we’ve included a second argument, the number 0. This argument sets the accumulator’s starting value. (The starting value can be a string, a number, an array, or an object.)</p>
+
+								<p>If you don’t include this optional second argument, then by default your accumulator’s initial value will be the value of the first item in your array.</p>
+
+								<p>Now that we understand how to set the starting value of the accumulator, here’s a breakdown of the callback function. The callback has four possible parameters:</p>
+
+								<dl>
+									<dt><code>accumulator</code></dt>
+									<dd>This parameter begins at an initial starting value and then becomes the cumulative value that you create by collecting and incorporating data from the array</dd>
+									<dt><code>currentValue</code></dt>
+									<dd>The value of the current array item</dd>
+									<dt><code>currentIndex</code> (optional)</dt>
+									<dd>The index number of the current array item</dd>
+									<dt><code>array</code> (optional)</dt>
+									<dd>The entire original array</dd>
+								</dl>
+
+								<p>In our example, within the callback function we’re returning a summed value: the accumulator’s current value plus the value of the current array item. Note that this callback return value then becomes the new value of the accumulator parameter for the next callback execution. So in the next iteration of the callback function, the accumulator parameter now represents whatever value was just returned from the previous callback execution. </p>
+
+								<p>This goes on down the line, with the return value of each callback execution being passed on to the next callback execution as the new value of the accumulator parameter. Then once the entire array has been iterated over, the final value of the accumulator becomes the return of the entire <code>reduce()</code> function.</p>
+
+								<h3>Setting Your Accumulator Start Value</h3>
+
+								<p>As mentioned earlier, <code>reduce()</code> allows you to use a second argument to set the starting value of your accumulator.</p>
+
+								<p><code>var total = arr.reduce(callback, accumulatorStartValue);</code></p>
+
+								<p>While this argument is optional, it’s often considered “safer” to explicitly add the <code>accumulatorStartValue</code> argument, rather than simply letting JavaScript go to the default of using the first value in the array as the accumulator start value. This is because if, for some reason, your array is empty AND you don’t have an <code>accumulatorStartValue</code>, then you will have no starting value for your accumulator. And a <code>reduce()</code> method with no initial accumulator value will create an error. So setting an explicit start value prevents the possibility of ending up with that type of error.</p>
+
+								<p>If you decide not to explicitly set an accumulator starting value, you should understand that the callback iterations will run slightly differently than if you did include an explicit starting value.</p>
+
+								<ul>
+									<li>
+										<h4>If you do include <code>accumulatorStartValue</code>:</h4>
+										<dl>
+											<dt>First Iteration</dt>
+											<dd>In the first callback iteration, the <code>accumulator</code> parameter represents the <code>accumulatorStartValue</code> argument, and the <code>currentValue</code> parameter represents the value of the first array item. The <code>currentIndex</code> parameter represents the index of the first array item.</dd>
+											<dt>Second Iteration</dt>
+											<dd>Then during the second callback iteration, <code>accumulator</code> represents the returned value from the previous callback, <code>currentValue</code> represents the value of the second array item, and <code>currentIndex</code> represents the index of the second array item. Additional iterations will proceed in the same way, moving through the items in the array.</dd>
+										</dl>
+									</li>
+
+									<li>
+										<h4>If you don't include <code>accumulatorStartValue</code>:</h4>
+
+										<dl>
+											<dt>First Iteration</dt>
+											<dd>In this case, for the first iteration of the callback, the <code>accumulator</code> parameter represents the value of the first array item, the <code>currentValue</code> parameter represents the value of the second array item, and the <code>currentIndex</code> parameter represents the index of the second array item.</dd>
+											<dt>Second Iteration</dt>
+											<dd>During the second callback iteration, <code>accumulator</code> represents the returned value from the previous callback, <code>currentValue</code> represents the value of the third array item, and <code>currentIndex</code> represents the index of the third array item. Additional iterations will proceed in the same way, moving through the items in the array.</dd>
+										</dl>
+									</li>
+								</ul>
+
+								<p>This can be a little confusing at first, because it means that the <code>accumulator</code>, <code>currentValue</code>, and <code>currentIndex</code> parameters don’t always have the exact same meaning every time you use <code>reduce()</code>. Depending on whether or not you’ve included an <code>accumulatorStartValue</code> argument, they will represent slightly different items in the array. This can be a little tricky to get your head around at first, but working through some examples should help clarify things. </p>
+
+								<h3>Creating Effective Callback Functions</h3>
+
+								<p>Note that you must write your callback function so that each time it runs on an array item, it uses some data from that item to change the accumulator in some way. Otherwise the accumulator won’t get altered and updated with new information, so ultimately the return of the <code>reduce()</code> method will just be the same value that the accumulator started at.</p>
+
+								<p>You must also remember to include the accumulator in your return at the end of your callback function. This is required so that the current, updated value of the accumulator can be passed on to the next callback execution. Otherwise, the next iteration of the callback won’t have access to the new value that was created by the previous iteration.</p>
+
+								<p>Beyond these basic rules, you have a great deal of flexibility in how you can collect data from the array and incorporate it into the accumulator.</p>
+      				</div>
 					</div>
 					<div class="card">
   						<div class="card-header">Examples</div>
