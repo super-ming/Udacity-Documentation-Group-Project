@@ -57,11 +57,13 @@
   						<div class="card-body">
       					<p>As we’ve discussed, the unique beauty of <code>reduce()</code> is that it allows you to gather data from an array and use that data to create a cumulative value. This is possible because the <code>reduce()</code> method’s callback function is assigned a special “accumulator” parameter, which stores the cumulative value that you create from array item data.</p>
 
-								<p><code>arr.reduce(function(accumulator, currentValue, currentIndex, array){</code></p>
-
-								<p><code>//Callback code</code></p>
-
-								<p><code>});</code></p>
+								<pre>
+<code>
+	arr.reduce(function(accumulator, currentValue, currentIndex, array){
+	  //Callback code
+	});
+</code>
+								</pre>
 
 								<p>You’ll write your code so that the value of the accumulator parameter gets updated every time the callback runs on an array item, thus incorporating specific information from that item into the accumulator’s value. The final value of this special accumulator parameter is what gets returned once <code>reduce()</code> finishes executing.</p>
 
@@ -85,11 +87,13 @@
   						<div class="card-body">
       					<p>Now that we understand the basic concept of <code>reduce()</code>, let's dig into how it works in practice:</p>
 
-								<p><code>var total = [1, 2, 3, 4, 5].reduce(function(accumulator, currentValue, currentIndex, array){</code></p>
-
-								<p><code>return accumulator + currentValue;</code></p>
-
-								<p><code>}, 0);</code></p>
+								<pre>
+<code>
+	var total = [1, 2, 3, 4, 5].reduce(function(accumulator, currentValue, currentIndex, array){
+	  return accumulator + currentValue;
+	}, 0);
+</code>
+								</pre>
 
 								<p>Here, the value of <code>total</code> will be the return value of the <code>reduce()</code> method. The <code>reduce()</code> method’s return value is the final value of the accumulator parameter once the callback has finished iterating over the entire array. In this case the return is 15, the total sum of all the numbers in the array. So the value of <code>total</code> will be 15</p>
 
@@ -165,20 +169,20 @@
 
 								<pre>
 <code>
-//Array
-var arr = [4, 2, 51, 13, 32];
+	//Array
+	var arr = [4, 2, 51, 13, 32];
 
-//Finding the average
-var average = arr.reduce(function(accumulator, currentValue, currentIndex, array){
-	accumulator += currentValue;
-	if(currentIndex === array.length-1) {
-    return accumulator/array.length;
-  } else {
-    return accumulator;
-  }
-}, 0);
+	//Finding the average
+	var average = arr.reduce(function(accumulator, currentValue, currentIndex, array){
+		accumulator += currentValue;
+		if(currentIndex === array.length-1) {
+	    return accumulator/array.length;
+	  } else {
+	    return accumulator;
+	  }
+	}, 0);
 
-//This reduce() code returns 20.4, the average of these numbers.
+	//This reduce() code returns 20.4, the average of these numbers.
 </code>
 								</pre>
 
@@ -186,25 +190,25 @@ var average = arr.reduce(function(accumulator, currentValue, currentIndex, array
 
 								<pre>
 <code>
-//Array
-var arr = ["dog", "dog", "cat", "dog", "cat", "rabbit"];
+	//Array
+	var arr = ["dog", "dog", "cat", "dog", "cat", "rabbit"];
 
-//Code to find out how many of each kind of animal is in the array
-var favoritePets = arr.reduce(function(accumulator, currentValue){
-  if(!accumulator[currentValue]) {
-     accumulator[currentValue] = 1;
-  } else {
-    accumulator[currentValue]++;
-  }
-  return accumulator;
-}, {});
+	//Code to find out how many of each kind of animal is in the array
+	var favoritePets = arr.reduce(function(accumulator, currentValue){
+	  if(!accumulator[currentValue]) {
+	     accumulator[currentValue] = 1;
+	  } else {
+	    accumulator[currentValue]++;
+	  }
+	  return accumulator;
+	}, {});
 
-//This reduce() code returns the following object:
-{
-  cat: 2,
-  dog: 3,
-  rabbit: 1
-}
+	//This reduce() code returns the following object:
+	{
+	  cat: 2,
+	  dog: 3,
+	  rabbit: 1
+	}
 </code>
 								</pre>
 
