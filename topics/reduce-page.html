@@ -126,32 +126,11 @@
 
 								<p>While this argument is optional, it’s often considered “safer” to explicitly add the <code>accumulatorStartValue</code> argument, rather than simply letting JavaScript go to the default of using the first value in the array as the accumulator start value. This is because if, for some reason, your array is empty AND you don’t have an <code>accumulatorStartValue</code>, then you will have no starting value for your accumulator. And a <code>reduce()</code> method with no initial accumulator value will create an error. So setting an explicit start value prevents the possibility of ending up with that type of error.</p>
 
-								<p>If you decide not to explicitly set an accumulator starting value, you should understand that the callback iterations will run slightly differently than if you did include an explicit starting value.</p>
+								<p>It’s important to understand that the <code>reduce()</code> callback will run slightly differently, depending on whether or not you decide to include an <code>accumulatorStartValue</code> argument. If you do include an <code>accumulatorStartValue</code>, the method’s callback will actually be invoked one additional time to process that additional value that needs to be taken into account. Also, depending on whether or not you include an <code>accumulatorStartValue</code>, some of the callback’s parameters will actually represent slightly different array items. This can all be a little confusing at first, because it means that the <code>accumulator</code> and <code>currentValue</code> parameters don’t always have the exact same meaning every time you use <code>reduce()</code>. Their meanings are actually different, based on whether you explicitly set an initial accumulator value.</p>
 
-								<ul>
-									<li>
-										<h4>If you do include <code>accumulatorStartValue</code>:</h4>
-										<dl>
-											<dt>First Iteration</dt>
-											<dd>In the first callback iteration, the <code>accumulator</code> parameter represents the <code>accumulatorStartValue</code> argument, and the <code>currentValue</code> parameter represents the value of the first array item. The <code>currentIndex</code> parameter represents the index of the first array item.</dd>
-											<dt>Second Iteration</dt>
-											<dd>Then during the second callback iteration, <code>accumulator</code> represents the returned value from the previous callback, <code>currentValue</code> represents the value of the second array item, and <code>currentIndex</code> represents the index of the second array item. Additional iterations will proceed in the same way, moving through the items in the array.</dd>
-										</dl>
-									</li>
+								<p>For example, when you do set an <code>accumulatorStartValue</code>, the first time your callback is invoked the <code>accumulator</code> parameter represents the start value that you set, and the <code>currentValue</code> parameter represents the value of the first array item. On the other hand, if you don’t set an <code>accumulatorStartValue</code>, then the first time the callback is invoked the <code>accumulator</code> parameter represents the value of the first array item, and the <code>currentValue</code> parameter actually represents the value of the second array item.</p>
 
-									<li>
-										<h4>If you don't include <code>accumulatorStartValue</code>:</h4>
-
-										<dl>
-											<dt>First Iteration</dt>
-											<dd>In this case, for the first iteration of the callback, the <code>accumulator</code> parameter represents the value of the first array item, the <code>currentValue</code> parameter represents the value of the second array item, and the <code>currentIndex</code> parameter represents the index of the second array item.</dd>
-											<dt>Second Iteration</dt>
-											<dd>During the second callback iteration, <code>accumulator</code> represents the returned value from the previous callback, <code>currentValue</code> represents the value of the third array item, and <code>currentIndex</code> represents the index of the third array item. Additional iterations will proceed in the same way, moving through the items in the array.</dd>
-										</dl>
-									</li>
-								</ul>
-
-								<p>This can be a little confusing at first, because it means that the <code>accumulator</code>, <code>currentValue</code>, and <code>currentIndex</code> parameters don’t always have the exact same meaning every time you use <code>reduce()</code>. Depending on whether or not you’ve included an <code>accumulatorStartValue</code> argument, they will represent slightly different items in the array. This can be a little tricky to get your head around at first, but working through some examples should help clarify things. </p>
+								<p>Basically, when you use an <code>accumulatorStartValue</code> argument, the array items represented by the <code>accumulator</code> and <code>currentValue</code> parameters get shifted over by one index space. This is done to account for the additional value that’s being added by the <code>accumulatorStartValue</code>. The Mozilla Developer page has some excellent visual aids to help you understand this effect, which you can view using this link. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">MDN Reduce Page</a></p>
 
 								<h3>Creating Effective Callback Functions</h3>
 
@@ -228,7 +207,7 @@
 					<div class="card">
   						<div class="card-header">Possible Uses</div>
   						<div class="card-body">
-								<p>The reduce() function has an extremely broad range of possible uses for combining or organizing data. You’ll use reduce() any time you want to come up with an end value that pulls all or some of the information from each element of an array and combines it in some new way. Possible use cases include:</p>
+								<p>The <code>reduce()</code> function has an extremely broad range of possible uses for combining or organizing data. You’ll use <code>reduce()</code> any time you want to come up with an end value that pulls all or some of the information from each element of an array and combines it in some new way. Possible use cases include:</p>
 
 								<ul>
 									<li>Any sort of cumulative math operation that you want to perform using every item in an array (i.e. adding all the numbers in an array, multiplying all the numbers in an array, etc.)</li>
@@ -277,9 +256,5 @@
 				<p > Want to contribute? Go <a href="https://github.com/dalumiller/Udacity-Documentation-Group-Project">here</a> to get started.</p>
 				</div>
 			</div>
-
 		</div>
-
-
-
 	</body>
