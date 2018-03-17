@@ -161,8 +161,65 @@
 					<div class="card">
   						<div class="card-header">Examples</div>
   						<div class="card-body">
-      					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      					</div>
+      					<p>Averaging an Array of Numbers:</p>
+
+								<pre>
+<code>
+//Array
+var arr = [4, 2, 51, 13, 32];
+
+//Finding the average
+var average = arr.reduce(function(accumulator, currentValue, currentIndex, array){
+	accumulator += currentValue;
+	if(currentIndex === array.length-1) {
+    return accumulator/array.length;
+  } else {
+    return accumulator;
+  }
+}, 0);
+
+//This reduce() code returns 20.4, the average of these numbers.
+</code>
+								</pre>
+
+								<p>Counting Instances of Values in an Array:</p>
+
+								<pre>
+<code>
+//Array
+var arr = ["dog", "dog", "cat", "dog", "cat", "rabbit"];
+
+//Code to find out how many of each kind of animal is in the array
+var favoritePets = arr.reduce(function(accumulator, currentValue){
+  if(!accumulator[currentValue]) {
+     accumulator[currentValue] = 1;
+  } else {
+    accumulator[currentValue]++;
+  }
+  return accumulator;
+}, {});
+
+//This reduce() code returns the following object:
+{
+  cat: 2,
+  dog: 3,
+  rabbit: 1
+}
+</code>
+								</pre>
+
+								<p>Flattening a nested array:</p>
+
+								<pre>
+<code>
+	var flatArray = [[1, 2, 3], [4, 5, 6]].reduce(function(accumulator, currentValue){
+	  return accumulator.concat(currentValue);
+	}, []);
+
+	//This reduce() code returns: [1, 2, 3, 4, 5, 6]
+</code>
+								</pre>
+      				</div>
 					</div>
 					<div class="card">
   						<div class="card-header">Possible Uses</div>
