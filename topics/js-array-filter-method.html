@@ -187,7 +187,27 @@
   						<div class="card-header">Possible Uses</div>
   						<div class="card-body">
 
-                <p>Whenever you find to find a subset of array elements based on a condition(s). </p>
+                <p>The <code>filter()</code> method can be applied for a myriad of uses. Generally, whenever a developer whats to find certain array elements that are contained withing an array, the <code>filter()</code> method can be used as a way to obtain those specific array elements and return them in a new array.</p>
+
+                <p>Perhaps the coolest thing to note about the <code>filter()</code> method, is that it returns a new array instead of modifying an array, which allows it to be <em>chainable</em> with other array methods that return a new array. Allowing the <code>filter()</code> method to be combined or <em>chained</em>  with other array methods such as <code>sort()</code> and <code>map()</code> which are built-in methods that also return a new array instead of modifying it.</p>
+
+                <p>Chaining methods allows a developer even greater control when obtaining an array with only specific items, it would look similar to this example in a JavaScript file:</p>
+
+                <div class="box"><pre class="has-code">  <code class="language-javascript cm-s-default"><br><span class="cm-comment">// the "…" is where anonymous functions would likely be added</span><br><span class="cm-variable">myArray</span>.<span class="cm-property">filter</span>(<span class="cm-variable">…</span>).<span class="cm-property">map</span>(<span class="cm-variable">…</span>).<span class="cm-property">sort</span>(<span class="cm-variable">…</span>); <span class="cm-comment">// returns a new array</span><br><br></code>
+                </pre></div>
+
+                <p>Some uses for using <code>filter()</code> may include:</p>
+
+                <ul>
+                <li>Finding persons who are older, younger or within a range of ages.</li>
+                <li>Finding certain array elements in an array that meet a certain criteria.</li>
+                <li>Finding certain persons in an array who have a specific name.</li>
+                <li>When used with the array <code>length()</code> property, you can determine how many array elements have been filtered into the resulting array.</li>
+                <li>Determining if a certain object property is the correct data type, string length, ect.</li>
+                <li>After you receive some JSON data from an Ajax call, you can filter out only the disired data from the JSON.</li>
+                </ul>
+
+                <p>Also note, that the <code>filter()</code> method does not run on array elements that do not have a value.</p>
       					</div>
 					</div>
 					<div class="card">
