@@ -35,8 +35,8 @@
 			padding-left:15px;
 		}
 		p{
-			padding-bottom:0px;
-			margin-bottom:0px;
+			padding:10px 0px 10px 0px;
+			margin:0px;
 		}
 	
 	</style>
@@ -99,8 +99,9 @@
   						<div class="card-body">							  
 							<code>
 								<pre>var myObj = {}; <em>//empty object</em></pre>		  
-							  	<pre>var myObj = {color:"blue"}; <em>//1 member</em></pre>
+							  	<pre>var myObj = {color:"blue"};</pre>
 							</code>
+							<p>Data inside objects are stored in key:value pairs. The key is the member name or identifier used to access the value associated with it. Object members that are not functions are called <em>properties.</em> Object members that are functions are called <em>methods.</em></em> Member values can be any data type.</p>
 						</div>
 					</div>
 					<div class="card">
@@ -109,13 +110,23 @@
 							<code><pre>var myObj = {fName:"Tim",</pre>
 								<pre>            lName:"Jones"};</pre>
 								<pre><em>//OR</em></pre>							
-								<pre>myObj["fName"] = "Tim";</pre>
-								<pre>myObj["lName"] = "Jones";</pre>
+								<pre>myObj["fName"] = "Tim"; <em>//Bracket Notation</em></pre>
+								<pre>myObj.lname = "Jones"; <em>//Dot Notation</em></pre>
 								<pre>myObj["pName"]=function(){</pre>
 								<pre>    return myObj.fName + " " + myObj.lName;</pre>
 									<pre>};</pre>
 							</code> 
-							<p>Data inside objects are stored in key:value pairs. The key is the member name or identifier used to access the value associated with it. Object members that are not functions are called <em>properties.</em> Object members that are functions are called <em>methods.</em></em> Member values can be any data type.</p>
+							<p>Object properties and methods can be added using the Dot Notation or the Bracket notation. They can also be created when the object is created</p>
+
+							<code>
+								<pre>var myObj = {</pre>
+								<pre>    fName:"Tim",</pre>
+								<pre>    lName:"Jones",</pre>
+								<pre>    pName: function(){</pre>
+								<pre>        return this.fName + ' ' +  this.lName,</pre>
+										<pre>}};</pre>
+							</code>
+							
 							 
 						</div>
 					</div>
@@ -127,7 +138,7 @@
 								<pre>myObj.lName -> "Jones" <em>//Dot Notation </em></pre>
 								<pre>myObj.pName() -> "Tim Jones" <em>//access method></em></pre>
 							</code>
-							<p><br>Data inside objects can be accessed using the <em>dot notation</em> or the <em>bracket notation</em>. Methods are also accessed by dot or bracket notation, but otherwise behave like normal functions. Data has to be accessed using the object's name followed by the property/method name. If a property is nested in more than 1 object,then all "parent" objects must also be written to access the data.</p><br>
+							<p>Data inside objects can be accessed using the <em>dot notation</em> or the <em>bracket notation</em>. Methods are also accessed by dot or bracket notation, but otherwise behave like normal functions. Data has to be accessed using the object's name followed by the property/method name. If a property is nested in more than 1 object,then all "parent" objects must also be written to access the data.</p>
 							<code>
 								<pre>var kitchen = { </pre>
 								<pre>    stove:"Whirlpool",</pre>
@@ -154,7 +165,7 @@
 								<pre>myObj["fName"] = "Mike" -> Mike</pre>
 								<pre>myObj.lName = "Smith" -> Smith</pre>
 							</code>
-							<p><br>Member values can be changed simply by accessing them using dot or bracket notation, and then changing the value. </p>
+							<p>Member values can be changed simply by accessing them using dot or bracket notation, and then changing the value. </p>
 						</div>
 					</div>
 					<div class="card">
@@ -168,10 +179,10 @@
 								<pre>	console.log(name);  -> "Liz"</pre>
 								<pre>	console.log("Hi " + this.name); -> "Hi Jim"</pre>
 								<pre>    }};</pre>
-								<pre>greeting.sayHi()-> "Hi Jim"</pre>
+								<pre>greeting.sayHi()</pre>
 							</code>
-							<p><br>This refers to the current object where 'this' is written. "this" object is 'greeting' and has a variable named <em>name</em>. Without 'this', name refers to the variable defined inside the function.
-							<br>this.name == greeting.name</p>
+							<p>This refers to the current object where 'this' is written. "this" object is 'greeting' and has a variable named <em>name</em>. Without 'this', name refers to the variable defined inside the function.
+							this.name == greeting.name</p>
 						</div>
 					</div>
 					<div class="card">
@@ -186,8 +197,8 @@
 								<pre>var user2email = "Liz@email.com"</pre>
 								<pre>var user2profilepic = "Liz.png"</pre>
 							</code>
-							<p><br>Objects make it easier. </p>
-							<br>
+							<p>Objects make it easier. </p>
+							
 							<code>
 								<pre>var Tim = {</pre>
 								<pre>    fname:"Tim",</pre>
@@ -198,7 +209,7 @@
 								<pre>    email:"Liz@email.com,</pre>
 								<pre>    pic:"Liz.png"};</pre>
 							</code>
-							<p><br>Now all the information about the users are stored together for easier use. </p>
+							<p>Now all the information about the users are stored together for easier use. </p>
 						</div>
 					</div>
 					<div class="card">
