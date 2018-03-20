@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+	<title>Object</title>
 	<meta charset="utf-8"/>
 	<!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,7 +20,8 @@
 		pre,code {
 			padding:0px;
 			margin:0px;
-			color:red;
+			color:blueviolet;
+			font-size:small;
 		}
 		img {
 			width:400px;
@@ -28,6 +30,13 @@
 		.flex{
 			display:flex;
 			flex-wrap:wrap;
+		}
+		pre{
+			padding-left:15px;
+		}
+		p{
+			padding-bottom:0px;
+			margin-bottom:0px;
 		}
 	
 	</style>
@@ -65,7 +74,7 @@
   						<div class="card-body">
 							<p>An object is like a box labeled kitchen. Inside are things related to the kitchen. </p>
 								<div class="flex">
-									<small><code>
+									<code>
 										<pre>var kitchen = { </pre>
 										<pre>    stove:"Whirlpool",</pre>
 										<pre>    drawer:["forks","knives","spoons"],</pre>
@@ -80,33 +89,92 @@
 										<pre>        }</pre>
 										<pre>    },</pre>				  
 										<pre>};</pre>
-									</code></small>
+									</code>
 								<img src = 'img1.svg' alt="box-container">
 							</div>
       					</div>
 					</div>
 					<div class="card">
-  						<div class="card-header">The Call</div>
-  						<div class="card-body">
-      					<p></p>
-      					</div>
+  						<div class="card-header">Create an object</div>
+  						<div class="card-body">							  
+							  <code><pre>var myObj = {}; //empty object</pre>		  
+							  <pre>var myObj = {color:"blue"}; //1 member</pre></code>
+							  <p></p>		  
+						</div>
 					</div>
 					<div class="card">
-  						<div class="card-header">Video Instruction (optional)</div>
+  						<div class="card-header">To create object members</div>
   						<div class="card-body">
-      					<img id="youTube" src="../../img/youtube-logo.png"/>
-      					</div>
+							<code><pre>var myObj = {fName:"Tim",</pre>
+								<pre>            lName:"Jones"};</pre>
+								<pre>//OR</pre>							
+								<pre>myObj["fName"] = "Tim";</pre>
+								<pre>myObj["lName"] = "Jones";</pre>
+								<pre>myObj["pName"]=function(){</pre>
+									<pre>return myObj.fName + " " + myObj.lName;</pre>
+									<pre>};</pre>
+								<p>Data inside objects are stored in key:value pairs. The key is the member name or identifier used to access the value associated with it. Object members that are not functions are called <em>properties.</em> Object members that are functions are called <em>methods.</em></em> Member values can be any data type.</p>
+							</code>  
+						</div>
 					</div>
 					<div class="card">
-  						<div class="card-header">Examples</div>
-  						<div class="card-body">
-      					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      					</div>
+						<div class="card-header">To access members:</div>
+						<div class="card-body">
+							<code><pre>myObj["fName"] -> "Tim" //Bracket Notation </pre>
+							<pre>myObj.N -> "Jones" //Dot Notation </pre>
+							<pre>myObj.pName() -> "Tim Jones" //access method</pre>
+						<p></p></code>
+						</div>
 					</div>
+					<div class="card">
+						<div class="card-header">To change member values</div>
+						<div class="card-body">
+							<code><pre>myObj["fName"] = "Mike" -> Mike</pre>
+							<pre>myObj.lName = "Smith" -> Smith</pre></code>
+						</div>
+					</div>
+					  <div class="card">
+							<div class="card-header">this</div>
+							<div class="card-body">
+							<code>
+								<pre>var greeting = {</pre>
+									<pre>name:"Jim",</pre>
+									<pre>sayHi:function(){</pre>
+										<pre>var name = "Liz";</pre>
+										<pre>console.log(name);  -> "Liz"</pre>
+										<pre>console.log("Hi " + this.name); -> "Hi Jim"</pre>
+										<pre>}};</pre>
+									<pre>console.log(greeting.sayHi())-> "Hi Jim"</pre>
+									<p><br>This refers to the current object where 'this' is written
+									<br>this.name == greeting.name</p>
+							</code>
+							</div>
+					  </div>
 					<div class="card">
   						<div class="card-header">Possible Uses</div>
   						<div class="card-body">
-      					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      					<code>
+							  <p>How do objects fit into the real-world?</p>
+							  <pre>var user1fname = "Tim"</pre>
+							  <pre>var user1email = "Tim@email.com"</pre>
+							  <pre>var user1profilepic = "Tim.png"</pre>
+							  <pre>var user2fname = "Liz"</pre>
+							  <pre>var user2email = "Liz@email.com"</pre>
+							  <pre>var user2profilepic = "Liz.png"</pre>
+							  <p><br>It would be nearly impossible to keep up with all of your users and their info this way. </p>
+								<br>
+							  <pre>var Tim = {</pre>
+								<pre>    fname:"Tim",</pre>
+								<pre>    email:"Tim@email.com,</pre>
+								<pre>    pic:"Tim.png"};</pre>
+							  <pre>var Liz = {</pre>
+								<pre>    fname:"Liz",</pre>
+								<pre>    email:"Liz@email.com,</pre>
+								<pre>    pic:"Liz.png"};</pre>
+							<p><br>Now all the information about the users are stored together for easier use. </p>
+
+
+						  </code>
       					</div>
 					</div>
 					<div class="card">
