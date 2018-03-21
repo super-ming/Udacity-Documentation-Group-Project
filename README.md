@@ -111,6 +111,7 @@ The best way to learn is to be forced to teach others, so this project aims at g
 <li>Retitle this new page following the pattern of topic-name-page (ie. "foreach-page.html", or "for-loop-page.html").</li>
   <li> Make sure your page uses the stylesheet.css and if your page needs individual elements not currently found then please make those additions with commit messages detailing your additions.</li>
 <li>Make a Pull Request to initiate discussion about your commits. </li>
+<li>To request that your content be reviewed, please @jeneesmith1 in github or @jeneecsmith in the Udacity Discussion forums.</li> 
 <li> Wait for comments from the team reviewing the submissions to ensure the style pages are consistent.</li>
 </ol>
 
@@ -119,6 +120,8 @@ Each "page" should go in the Topics folder. When writing your code, be sure to u
 
 <h4> Conclusion</h4>
 If anything is false or not clear, feel free to contact me or open an issue in GitHubm, or create a reply on our Udacity Forum.
+
+
 
 <h4>License</h4>
 <a href="license.md" target="_blank" >License</a>
