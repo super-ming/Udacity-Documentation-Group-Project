@@ -5,16 +5,16 @@
 	<!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- CSS style guide -->
-	<link rel="stylesheet" type="text/css" href="../../css/stylesheet.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css"/>
 	<!-- jQuery CDN -->
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 	<!-- JS file -->
-	<script src="../../js/jquery.easy-autocomplete.min.js"></script> 
+	<script src="../js/jquery.easy-autocomplete.min.js"></script> 
 	<!-- CSS file -->
-	<link rel="stylesheet" href="../../css/easy-autocomplete.min.css"> 
+	<link rel="stylesheet" href="../css/easy-autocomplete.min.css"> 
 	<!-- Additional CSS Themes file - not required-->
-	<link rel="stylesheet" href="../../css/easy-autocomplete.themes.min.css"> 
-    <script type="text/javascript" src="../../js/topic-autocomplete.js"></script>
+	<link rel="stylesheet" href="../css/easy-autocomplete.themes.min.css"> 
+    <script type="text/javascript" src="../js/topic-autocomplete.js"></script>
 	</head>
 	<style>
 		pre,code {
@@ -43,7 +43,7 @@
 	<body>
 		<!-- Full header with title and Udacity logo -->
 		<div id="template-doc-masthead" class="doc-masthead">
-			<h1>Doc<img id="logo" src="../../img/udacity.svg">mentation Project</h1>
+			<h1>Doc<img id="logo" src="../img/udacity.svg">mentation Project</h1>
 		</div>
 		<div class="doc-header"><h2>Object</h2>
 		</div>
@@ -54,11 +54,11 @@
 					<!-- Navigation section -->
 					<nav class="nav flex-column">
 						<input id="template-links" />
-						<a class="nav-link" href="../../index.html">Home</a>
+						<a class="nav-link" href="../index.html">Home</a>
  						<a class="nav-link" href="#">Topic A</a>
   						<a class="nav-link" href="#">Topic B</a>
   						<a class="nav-link" href="#">Topic C</a>
-  						<a class="nav-link" href="#">Object</a>
+  						<a class="nav-link" href="objects.html">Object</a>
 					</nav>
 				</div>
 				<!-- Here begins the various cards for the sections of the topic -->
@@ -90,7 +90,7 @@
 									<pre>    },</pre>				  
 									<pre>};</pre>
 								</code>
-								<img src = 'img1.svg' alt="box-container">
+								<img src = '../img/obj-img1.svg' alt="box-container">
 							</div>
       					</div>
 					</div>
@@ -131,9 +131,9 @@
 						<div class="card-header">Access Members</div>
 						<div class="card-body">
 							<code>
-								<pre>myObj["fName"] -> "Tim" //<em>Bracket Notation ></em></pre>
-								<pre>myObj.lName -> "Jones" <em>//Dot Notation </em></pre>
-								<pre>myObj.pName() -> "Tim Jones" <em>//access method></em></pre>
+								<pre>myObj["fName"]<em> //"Tim" Bracket Notation ></em></pre>
+								<pre>myObj.lName<em> //"Jones" Dot Notation </em></pre>
+								<pre>myObj.pName()<em> // "Tim Jones" access method></em></pre>
 							</code>
 							<p>Data inside objects can be accessed using the <em>dot notation</em> or the <em>bracket notation</em>. Methods are also accessed by dot or bracket notation, but otherwise behave like normal functions. Data has to be accessed using the object's name followed by the property/method name. If a property is nested in more than 1 object,then all "parent" objects must also be written to access the data.</p>
 							<code>
@@ -141,7 +141,7 @@
 								<pre>    stove:"Whirlpool",</pre>
 								<pre>    drawer:["forks","knives","spoons"],</pre>
 								<pre>    cookDinner:function(){</pre>
-								<pre>        console.log("Dinners Ready!");</pre>
+								<pre>        console.log("Dinner's Ready!");</pre>
 								<pre>    },</pre>
 								<pre>    refrigerator:{ <em>//object in object</em></pre>
 								<pre>        shelves:2,</pre>
@@ -151,7 +151,7 @@
 								<pre>        }</pre>
 								<pre>    },</pre>				  
 								<pre>};</pre>
-								kitchen.refrigerator.clean(); -> "All Clean!"					
+								kitchen.refrigerator.clean(); <em>//"All Clean!"</em>					
 							</code>
 						</div>
 					</div>
@@ -159,8 +159,10 @@
 						<div class="card-header">Change Member Values</div>
 						<div class="card-body">
 							<code>
-								<pre>myObj["fName"] = "Mike" -> Mike</pre>
-								<pre>myObj.lName = "Smith" -> Smith</pre>
+								<pre>myObj["fName"] = "Mike"</pre>
+								<pre>myObj.lName = "Smith" </pre>
+								<pre>console.log(myObj.fName);<em>// Mike</em></pre>
+								<pre>console.log(myObj["lName"]);<em>//Smith</em></pre>
 							</code>
 							<p>Member values can be changed simply by accessing them using dot or bracket notation, and then changing the value. </p>
 						</div>
@@ -173,10 +175,10 @@
 								<pre>    name:"Jim",</pre>
 								<pre>    sayHi:function(){</pre>
 								<pre>	var name = "Liz";</pre>
-								<pre>	console.log(name);  -> "Liz"</pre>
-								<pre>	console.log("Hi " + this.name); -> "Hi Jim"</pre>
+								<pre>	console.log(name);<em> //"Liz"</em></pre>
+								<pre>	console.log("Hi " + this.name);<em> //"Hi Jim"</em></pre>
 								<pre>    }};</pre>
-								<pre>greeting.sayHi()</pre>
+								<pre>greeting.sayHi();</pre>
 							</code>
 							<p>This refers to the current object where 'this' is written. "this" object is 'greeting' and has a variable named <em>name</em>. Without 'this', name refers to the variable defined inside the function.
 							this.name == greeting.name</p>
