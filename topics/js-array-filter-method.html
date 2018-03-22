@@ -11,9 +11,11 @@
 	<script src="../js/jquery.easy-autocomplete.min.js"></script>
 	<!-- CSS file -->
 	<link rel="stylesheet" href="../css/easy-autocomplete.min.css">
+  <link rel="stylesheet" href="../css/prism.css">
 	<!-- Additional CSS Themes file - not required-->
 	<link rel="stylesheet" href="../css/easy-autocomplete.themes.min.css">
     <script type="text/javascript" src="../js/topic-autocomplete.js"></script>
+    <script src="../js/prism.js" defer></script>
 	</head>
 	<body>
 		<!-- Full header with title and Udacity logo -->
@@ -64,7 +66,7 @@
       					<p>To better grasp the concept of the <code>filter()</code> method, we can imagine a gold miner wanting to filter out gold and gems from a collection of mined rock. In a code context, this concept can be illustrated by using an array for the collection of mined rocks, and the array elements as being either <em>rock</em> or more valuable minerals such as <em>gold</em> or <em>gems</em>.</p>
 
                 <pre>
-                  <code class="js">
+                  <code class="language-javascript">
                 // our mined rock consists of rocks and more valuable materials
                 const minedRocks = [
                   'rock',
@@ -86,7 +88,7 @@
                 <p>When using the <code>filter()</code> method and designing the callback function to be passed into it, we need to be aware that only the array elements that return <code>true</code> from the callback function will be included in the resulting array.</p>
 
                 <pre>
-                  <code class="js">
+                  <code class="language-javascript">
                 // technically, this is our callback function
                 function goldPanning(rock) {
                   if (rock === 'gem' || rock === 'gold') {
@@ -100,7 +102,7 @@
                 <p>Moving on, since our miner plans on selling the gold he finds, we need to facilitate a way to hold onto the pieces of gold that were found from the panning process. In code terms, we first need to distinguish between when a built-in array method modifies an array from when a built-in array method results in a new array. Luckily for the miner, the <code>filter()</code> method does the latter, and the method results in a new array so the miner can easily store the valuable materials he finds. In our code, we would simply create a new variable called <code>valuableMinerals</code> that is used for storing the valuable minerals that were returned from running our <code>goldPanning</code> function.</p>
 
                 <pre>
-                  <code class="js">
+                  <code class="language-javascript">
                 const valuableMinerals = minedRocks.filter(goldPanning);
 
                 </code>
@@ -109,7 +111,7 @@
                 <p>To finish our illustration, let's see how many pieces of valuable materials were found by using <code>console.log</code> and the built-in <code>.length()</code> property for arrays. To see the actual resulting array, with the valuable minerals that were obtained from the gold panning process, just pass in the variable name used.</p>
 
                 <pre>
-                  <code class="js">
+                  <code class="language-javascript">
                 console.log(valuableMinerals.length); // returns 3
 
                 console.log(valuableMinerals); // returns ["gem", "gold", "gem"]
@@ -128,7 +130,7 @@
       					<p>Since the <code>filter()</code> method is a built-in array method, the method can act upon an array by simply appending <code>.filter()</code>, and then providing a callback function. Since the <code>filter()</code> method returns an array, a variable is used to save the new array containing the filtered array elements.</p>
 
                 <pre>
-                  <code class="js">
+                  <code class="language-javascript">
                 var filteredArray = arrayToFilter.filter(callbackFunction(currentValue, index, arr), thisValue);
 
                 </code>
@@ -137,7 +139,7 @@
                 <p>In the gold miner illustration, a callback function named <code>goldPanning()</code> was passed into <code>filter()</code> as a parameter, yet we could have simply provided that function as an anonymous function instead.</p>
 
                 <pre>
-                  <code class="js">
+                  <code class="language-javascript">
                 // old way
                 // function goldPanning(el) {
                 //   if (el === 'gem' || el === 'gold') {
