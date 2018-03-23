@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- CSS style guide -->
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css"/>
+	<!-- jQuery CDN -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<!-- JS file -->
+	<script src="js/jquery.easy-autocomplete.min.js"></script>
+	<!-- CSS file -->
+	<link rel="stylesheet" href="css/easy-autocomplete.min.css">
+	<!-- Additional CSS Themes file - not required-->
+	<link rel="stylesheet" href="css/easy-autocomplete.themes.min.css">
+  <link rel="stylesheet" href="css/prism.css">
+    <script type="text/javascript" src="js/topic-autocomplete.js"></script>
+    <script src="js/prism.js" defer></script>
+	</head>
+	<style>
+		.comment{
+			color:green;
+		}
+		.box{
+		  width: 600px;
+		  height: 200px;
+		  background: linear-gradient(to right, rgba(35, 172, 252, 0.5), rgba(239, 131, 227, 0.4));
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  line-height: 50px;
+		}
+
+		.title div{
+		  display: flex;
+		  justify-content: space-between;
+		  color: blue;
+		  width: 100%;
+		  text-align: center;
+		  align-items: center;
+		  font-family: monospace;
+		  font-size: 30px;
+		}
+
+		.grid{
+		  display: flex;
+		  width: 90%;
+		  height: 100px;
+		  background-color:white;
+		  margin: auto;
+		  border: 1px solid;
+		  padding: 5px;
+		  justify-content: space-around;
+		  align-items:center;
+		}
+
+		.grid div{
+		  border: 1px solid;
+		  height: 80%;
+		  width: 100%;
+		  text-align: center;
+		  line-height: 20px;
+		}
+
+		.grid .oval{
+		  height:20px;
+		  width:50px;
+		  border-radius: 50%;
+		  margin: 10px;
+		  justify-content: space-around;
+		  transform: skewY(-10deg);
+		  translate3d(20px,20px,20px);
+		  background: linear-gradient(to top right, blue, purple);
+		  animation-name: change;
+		  animation-duration: 3s;
+		  animation-iteration-count: infinite;
+		}
+
+		@keyframes change {
+		  from {background:linear-gradient(to top right, blue, purple);}
+		  to {background: linear-gradient(to bottom left, purple, red);}
+		}
+
+		.oval .shadow {
+		  position: absolute;
+		  width: 150%;
+		  height: 100%;
+		  background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+		  transform: rotateX(-15deg) translateX(-30px)
+		    translateY(30px) translateZ(-50px);
+		  z-index: -1;
+		}
+
+	</style>
+	<body>
+		<!-- Full header with title and Udacity logo -->
+		<div id="template-doc-masthead" class="doc-masthead">
+			<h1>Doc<img id="logo" src="../img/udacity.svg">mentation Project</h1>
+		</div>
+		<div class="doc-header"><h2>Pop() Method</h2>
+		</div>
+		<!-- Main body of the page, including the navigation -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 doc-sidebar">
+					<!-- Navigation section -->
+					<nav class="nav flex-column">
+						<input id="template-links" />
+						<a class="nav-link" href="index.html">Home</a>
+ 						<a class="nav-link" href="#">Topic A</a>
+  						<a class="nav-link" href="#">Topic B</a>
+  						<a class="nav-link" href="#">Topic C</a>
+  						<a class="nav-link" href="topics/objects.html">Object</a>
+						<a class="nav-link" href="topics/pop.html">Pop() method</a>
+					</nav>
+				</div>
+				<!-- Here begins the various cards for the sections of the topic -->
+				<div class="col-sm-9 doc-main">
+					<div class="card">
+  						<div class="card-header">Intro</div>
+  						<div class="card-body">
+      					<p>The pop() method is used for removing the last element at the end of an array and tells you the element that was removed.</p>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Illustration</div>
+  						<div class="card-body">
+      					<p>You can think of an array as a pill box container with a number of detachable sections for each day (Monday - Sunday).
+						Within each section contains a pill to be taken on that day. </p>
+						<p> Today is Sunday so you want to take out the pill from the very last section of the pill box. </p>
+						<div>
+							<pre>let box = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];</pre>
+							<pre class = "comment"><i>#an array with seven elements for each day of the week</i></pre>
+							<img src = '../img/pop.jpg' alt="pill-box">
+							<pre>box.pop();</pre>
+							<pre><i><strong>'Sunday'</strong></i></pre>
+							<pre class = "comment"><i>#this is the element that was removed</i></pre><br>
+							<p>Now the box array only contains the following:</p>
+							<pre>console.log(box);</pre>
+							<pre><i>['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];</i></pre>
+							<img src = '../img/pop1.jpg' alt="new-pill-box">
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Possible Uses</div>
+  						<div class="card-body">
+      					<p>You are hosting a party and you have an array to keep track of who is attending. Your friend Mike just told you that he will be attending so you added him to the array.</p>
+						<pre>let attendee = ['Sarah','Bill','Tyler','Judy','Mike'];</pre>
+						<pre class = "comment"><i>#It's a growing list!</i></pre>
+						<p>Five minutes later, he flaked out and said he will no longer be attending. Now you have to take him out of the list. You can use the pop() method since he is the last person on the list.
+						<pre>let flake = attendee.pop();</pre>
+						<pre>console.log(attendee);</pre>
+						<pre><i>['Sarah','Bill','Tyler','Judy']</i></pre>
+						<pre>console.log(flake);</pre>
+						<pre><i>'Mike'</i></pre>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">References</div>
+  						<div class="card-body">
+      					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"</a>MDN</p>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Bio</div>
+  						<div class="card-body">
+      					<a href="https://linkedin.com/in/mingyho"</a>Ming Ho</p>
+      					</div>
+					</div>
+				</div>
+				<!-- Bottom link for new contibutors to go to Github repo -->
+				<div class="contribute col-sm-12">
+				<p > Want to contribute? Go <a href="https://github.com/dalumiller/Udacity-Documentation-Group-Project">here</a> to get started.</p>
+				</div>
+			</div>
+
+		</div>
+
+
+
+	</body>
