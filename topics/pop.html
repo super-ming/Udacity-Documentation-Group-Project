@@ -21,77 +21,6 @@
 		.comment{
 			color:green;
 		}
-		.box{
-		  width: 600px;
-		  height: 200px;
-		  background: linear-gradient(to right, rgba(35, 172, 252, 0.5), rgba(239, 131, 227, 0.4));
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: center;
-		  align-items: center;
-		  line-height: 50px;
-		}
-
-		.title div{
-		  display: flex;
-		  justify-content: space-between;
-		  color: blue;
-		  width: 100%;
-		  text-align: center;
-		  align-items: center;
-		  font-family: monospace;
-		  font-size: 30px;
-		}
-
-		.grid{
-		  display: flex;
-		  width: 90%;
-		  height: 100px;
-		  background-color:white;
-		  margin: auto;
-		  border: 1px solid;
-		  padding: 5px;
-		  justify-content: space-around;
-		  align-items:center;
-		}
-
-		.grid div{
-		  border: 1px solid;
-		  height: 80%;
-		  width: 100%;
-		  text-align: center;
-		  line-height: 20px;
-		}
-
-		.grid .oval{
-		  height:20px;
-		  width:50px;
-		  border-radius: 50%;
-		  margin: 10px;
-		  justify-content: space-around;
-		  transform: skewY(-10deg);
-		  translate3d(20px,20px,20px);
-		  background: linear-gradient(to top right, blue, purple);
-		  animation-name: change;
-		  animation-duration: 3s;
-		  animation-iteration-count: infinite;
-		}
-
-		@keyframes change {
-		  from {background:linear-gradient(to top right, blue, purple);}
-		  to {background: linear-gradient(to bottom left, purple, red);}
-		}
-
-		.oval .shadow {
-		  position: absolute;
-		  width: 150%;
-		  height: 100%;
-		  background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
-		  transform: rotateX(-15deg) translateX(-30px)
-		    translateY(30px) translateZ(-50px);
-		  z-index: -1;
-		}
-
 	</style>
 	<body>
 		<!-- Full header with title and Udacity logo -->
@@ -130,14 +59,15 @@
 						Within each section contains a pill to be taken on that day. </p>
 						<p> Today is Sunday so you want to take out the pill from the very last section of the pill box. </p>
 						<div>
-							<pre>let box = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];</pre>
+							<!-- using pre tag to preserve white space-->
+							<pre><code>let box = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];</code></pre>
 							<pre class = "comment"><i>#an array with seven elements for each day of the week</i></pre>
 							<img src = '../img/pop.jpg' alt="pill-box">
-							<pre>box.pop();</pre>
+							<pre><code>box.pop();</code></pre>
 							<pre><i><strong>'Sunday'</strong></i></pre>
 							<pre class = "comment"><i>#this is the element that was removed</i></pre><br>
 							<p>Now the box array only contains the following:</p>
-							<pre>console.log(box);</pre>
+							<pre><code>console.log(box);</code></pre>
 							<pre><i>['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];</i></pre>
 							<img src = '../img/pop1.jpg' alt="new-pill-box">
       					</div>
@@ -146,13 +76,13 @@
   						<div class="card-header">Possible Uses</div>
   						<div class="card-body">
       					<p>You are hosting a party and you have an array to keep track of who is attending. Your friend Mike just told you that he will be attending so you added him to the array.</p>
-						<pre>let attendee = ['Sarah','Bill','Tyler','Judy','Mike'];</pre>
+						<pre><code>let attendee = ['Sarah','Bill','Tyler','Judy','Mike'];</code></pre>
 						<pre class = "comment"><i>#It's a growing list!</i></pre>
 						<p>Five minutes later, he flaked out and said he will no longer be attending. Now you have to take him out of the list. You can use the pop() method since he is the last person on the list.
-						<pre>let flake = attendee.pop();</pre>
-						<pre>console.log(attendee);</pre>
+						<pre><code>let flake = attendee.pop();</code></pre>
+						<pre><code>console.log(attendee);</code></pre>
 						<pre><i>['Sarah','Bill','Tyler','Judy']</i></pre>
-						<pre>console.log(flake);</pre>
+						<pre><code>console.log(flake);</code></pre>
 						<pre><i>'Mike'</i></pre>
       					</div>
 					</div>
