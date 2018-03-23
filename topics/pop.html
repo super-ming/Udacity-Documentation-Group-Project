@@ -17,11 +17,6 @@
     <script type="text/javascript" src="js/topic-autocomplete.js"></script>
     <script src="js/prism.js" defer></script>
 	</head>
-	<style>
-		.comment{
-			color:green;
-		}
-	</style>
 	<body>
 		<!-- Full header with title and Udacity logo -->
 		<div id="template-doc-masthead" class="doc-masthead">
@@ -55,47 +50,61 @@
 					<div class="card">
   						<div class="card-header">Illustration</div>
   						<div class="card-body">
-      					<p>You can think of an array as a pill box container with a number of detachable sections for each day (Monday - Sunday).
-						Within each section contains a pill to be taken on that day. </p>
-						<p> Today is Sunday so you want to take out the pill from the very last section of the pill box. </p>
-						<div>
+      						<p>You can think of an array as a pill box container with a number of detachable sections for each day (Monday - Sunday).
+							Within each section contains a pill to be taken on that day. </p>
+							<p> Today is Sunday so you want to take out the pill from the very last section of the pill box. </p>
 							<!-- using pre tag to preserve white space-->
-							<pre><code>let box = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];</code></pre>
-							<pre class = "comment"><i>#an array with seven elements for each day of the week</i></pre>
-							<img src = '../img/pop.jpg' alt="pill-box">
-							<pre><code>box.pop();</code></pre>
-							<pre><i><strong>'Sunday'</strong></i></pre>
-							<pre class = "comment"><i>#this is the element that was removed</i></pre><br>
+							<pre><img src = '../img/pop.jpg' alt="pill-box"></pre>
+							<pre><code>	let box = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];</code></pre>
+							<pre><i>	//an array with seven elements for each day of the week</i></pre>
+							<pre><code>	box.pop();</code></pre>
+							<pre><i><strong>	'Sunday'</strong></i></pre>
+							<pre><i>	//After using the pop() method, the removed element is displayed.</i><br></pre>
 							<p>Now the box array only contains the following:</p>
-							<pre><code>console.log(box);</code></pre>
+							<pre><code>	console.log(box);</code></pre>
 							<pre><i>['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];</i></pre>
-							<img src = '../img/pop1.jpg' alt="new-pill-box">
+							<pre><img src = '../img/pop1.jpg' alt="new-pill-box"></pre>
+	      				</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">The Call</div>
+  						<div class="card-body">
+      					<p>In the illustration above, we began by assigning the <code>box</code> variable with an array containing seven string elements, separated by commas.
+						In order to remove the very last element from the array, you call the pop method by adding <code>.pop()</code> after the array name.</p>
+						<pre>	array_name.pop();</pre>
+						<p> After the action is completed, the console automatically returns the element that was removed so you can confirm that the correct element was removed.</p>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Examples</div>
+  						<div class="card-body">
+							<p>You are hosting a party and you have an array to keep track of who is attending. Your friend Mike just told you that he will be attending so you added him to the array.</p>
+							<pre><code>	let attendee = ['Sarah','Bill','Tyler','Judy','Mike'];</code></pre>
+							<pre><i>	//It's a growing list!</i></pre>
+							<p>Five minutes later, he flaked out and said he will no longer be attending. Now you have to take him out of the list. You can use the <code>pop()</code> method since he is the last person on the list.
+							<pre><code>	let flake = attendee.pop();</code></pre>
+							<pre><code>	console.log(attendee);</code></pre>
+							<pre><i>	['Sarah','Bill','Tyler','Judy']</i></pre>
+							<pre><code>	console.log(flake);</code></pre>
+							<pre><i>	'Mike'</i></pre>
       					</div>
 					</div>
 					<div class="card">
   						<div class="card-header">Possible Uses</div>
   						<div class="card-body">
-      					<p>You are hosting a party and you have an array to keep track of who is attending. Your friend Mike just told you that he will be attending so you added him to the array.</p>
-						<pre><code>let attendee = ['Sarah','Bill','Tyler','Judy','Mike'];</code></pre>
-						<pre class = "comment"><i>#It's a growing list!</i></pre>
-						<p>Five minutes later, he flaked out and said he will no longer be attending. Now you have to take him out of the list. You can use the pop() method since he is the last person on the list.
-						<pre><code>let flake = attendee.pop();</code></pre>
-						<pre><code>console.log(attendee);</code></pre>
-						<pre><i>['Sarah','Bill','Tyler','Judy']</i></pre>
-						<pre><code>console.log(flake);</code></pre>
-						<pre><i>'Mike'</i></pre>
+      						<p>You can use the pop() method for the following:</p>
       					</div>
 					</div>
 					<div class="card">
   						<div class="card-header">References</div>
   						<div class="card-body">
-      					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"</a>MDN</p>
+      						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"</a>MDN</p>
       					</div>
 					</div>
 					<div class="card">
   						<div class="card-header">Bio</div>
   						<div class="card-body">
-      					<a href="https://linkedin.com/in/mingyho"</a>Ming Ho</p>
+      						<a href="https://linkedin.com/in/mingyho"</a>Ming Ho</p>
       					</div>
 					</div>
 				</div>
