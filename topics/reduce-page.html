@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8"/>
+	<title>Reduce Array Method</title>
 	<!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- CSS style guide -->
@@ -14,11 +15,11 @@
 	<!-- Additional CSS Themes file - not required-->
 	<link rel="stylesheet" href="../css/easy-autocomplete.themes.min.css">
     <script type="text/javascript" src="../js/topic-autocomplete.js"></script>
-	</head>
-	<body>
+</head>
+<body>
 		<!-- Full header with title and Udacity logo -->
 		<div id="template-doc-masthead" class="doc-masthead">
-			<h1>Doc<img id="logo" src="../img/udacity.svg">mentation Project</h1>
+			<h1>Doc<img id="logo" src="../img/udacity-logo.jpg" srcset="../img/udacity.svg">mentation Project</h1>
 		</div>
 		<div class="doc-header"><h2>The Reduce Method</h2>
 		</div>
@@ -95,7 +96,7 @@
 </code>
 								</pre>
 
-								<p>Here, the value of <code>total</code> will be the return value of the <code>reduce()</code> method. The <code>reduce()</code> method’s return value is the final value of the accumulator parameter once the callback has finished iterating over the entire array. In this case the return is 15, the total sum of all the numbers in the array. So the value of <code>total</code> will be 15</p>
+								<p>Here, the value of <code>total</code> will be the return value of the <code>reduce()</code> method. The <code>reduce()</code> method’s return value is the final value of the accumulator parameter once the callback has finished iterating over the entire array. In this case the return is 15, the total sum of all the numbers in the array. So the value of <code>total</code> will be 15.</p>
 
 								<p>Let’s walk through how we got this outcome, starting with an explanation of the optional second <code>reduce()</code> argument. You’ll notice that after the callback function, we’ve included a second argument, the number 0. This argument sets the accumulator’s starting value. (The starting value can be a string, a number, an array, or an object.)</p>
 
@@ -130,7 +131,7 @@
 
 								<p>For example, when you do set an <code>accumulatorStartValue</code>, the first time your callback is invoked the <code>accumulator</code> parameter represents the start value that you set, and the <code>currentValue</code> parameter represents the value of the first array item. On the other hand, if you don’t set an <code>accumulatorStartValue</code>, then the first time the callback is invoked the <code>accumulator</code> parameter represents the value of the first array item, and the <code>currentValue</code> parameter actually represents the value of the second array item.</p>
 
-								<p>Basically, when you use an <code>accumulatorStartValue</code> argument, the array items represented by the <code>accumulator</code> and <code>currentValue</code> parameters get shifted over by one index space. This is done to account for the additional value that’s being added by the <code>accumulatorStartValue</code>. The Mozilla Developer page has some excellent visual aids to help you understand this effect, which you can view using this link. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">MDN Reduce Page</a></p>
+								<p>Basically, when you use an <code>accumulatorStartValue</code> argument, the array items represented by the <code>accumulator</code> and <code>currentValue</code> parameters get shifted over by one index space. This is done to account for the additional value that’s being added by the <code>accumulatorStartValue</code>. The Mozilla Developer page has some excellent visual aids to help you understand this effect, which you can view using this link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">MDN Reduce Page</a>.</p>
 
 								<h3>Creating Effective Callback Functions</h3>
 
@@ -257,4 +258,4 @@
 				</div>
 			</div>
 		</div>
-	</body>
+</body>
