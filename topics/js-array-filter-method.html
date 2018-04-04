@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- CSS style guide -->
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css"/>
+	<!-- jQuery CDN -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<!-- JS file -->
+	<script src="../js/jquery.easy-autocomplete.min.js"></script>
+	<!-- CSS file -->
+	<link rel="stylesheet" href="../css/easy-autocomplete.min.css">
+  <link rel="stylesheet" href="../css/prism.css">
+	<!-- Additional CSS Themes file - not required-->
+	<link rel="stylesheet" href="../css/easy-autocomplete.themes.min.css">
+    <script type="text/javascript" src="../js/topic-autocomplete.js"></script>
+    <script src="../js/prism.js" defer></script>
+	</head>
+	<body>
+		<!-- Full header with title and Udacity logo -->
+		<div id="template-doc-masthead" class="doc-masthead">
+			<h1>Doc<img id="logo" src="../img/udacity.svg">mentation Project</h1>
+		</div>
+		<div class="doc-header"><h2>JavaScript Array Filter Method</h2>
+		</div>
+		<!-- Main body of the page, including the navigation -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 doc-sidebar">
+					<!-- Navigation section -->
+					<nav class="nav flex-column">
+						<input id="template-links" />
+						<a class="nav-link" href="index.html">Home</a>
+ 						<a class="nav-link" href="#">Topic A</a>
+  						<a class="nav-link" href="#">Topic B</a>
+  						<a class="nav-link" href="#">Topic C</a>
+  						<a class="nav-link" href="#">Topic D</a>
+					</nav>
+				</div>
+				<!-- Here begins the various cards for the sections of the topic -->
+				<div class="col-sm-9 doc-main">
+					<div class="card">
+  						<div class="card-header">Intro</div>
+  						<div class="card-body">
+      					<p>One of the useful built-in methods for working with arrays is the <code>filter()</code> method. By using the <code>filter()</code> method, we can take an array and filter it down into a new array containing only the elements that satisfy a given criteria. </p>
+
+                <p>The criteria to obtain the desired array elements from an array is in the form of a function that is passed into the <code>filter()</code> method, this is called a <em>predicate function</em>. The predicate function that is passed into <code>filter()</code> will be ran on each array element in the array that the method is called on. As each array element passes through this function, a boolean <code>true</code> is returned for array elements that have been returned as <code>true</code> from the function body, only array elements returning <code>true</code> will be included in the resulting array.</p>
+
+                <p>Because the <code>filter()</code> method returns a new array rather than modifying an array, a variable is created to hold the new array that contains the filtered array elements.</p>
+
+                <p>Without the <code>filter()</code> method, programmers would have to use a <code>for.. loop</code> to achieve the same functionality that the <code>filter()</code> method provides. However, using the <code>filter()</code> method is regarded as a better practice as it makes the source code more <em>readable</em> and more <em>concise</em>.</p>
+
+                <blockquote>
+                <p>The <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function. </p>
+
+                <p><em>Taken from the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Mozilla Developer Network page on <code>Array.prototype.filter()</code></a></em></p>
+                </blockquote>
+
+                <p>The <code>filter()</code> method was introduced in ECMAScript 5, so a polyfill or a JavaScript utility library will be necessary for using <code>filter()</code> in older browsers.</p>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Illustration</div>
+  						<div class="card-body">
+      					<p>To better grasp the concept of the <code>filter()</code> method, we can imagine a gold miner wanting to filter out gold and gems from a collection of mined rock. In a code context, this concept can be illustrated by using an array for the collection of mined rocks, and the array elements as being either <em>rock</em> or more valuable minerals such as <em>gold</em> or <em>gems</em>.</p>
+
+                <pre>
+                  <code class="language-javascript">
+                // our mined rock consists of rocks and more valuable materials
+                const minedRocks = [
+                  'rock',
+                  'gem',
+                  'rock',
+                  'rock',
+                  'gold',
+                  'rock',
+                  'rock',
+                  'rock',
+                  'gem',
+                ];
+
+                </code>
+                </pre>
+
+                <p>Our miner uses a method called <a href="https://en.wikipedia.org/wiki/Gold_panning"><em>gold panning</em></a> in order to obtain the valuable materials from the collection of rocks. Gold panning is a process of agitating some raw material in a pan with water so that the gold will sink to the bottom of the pan to be recovered while the rest of the materials will spill out of the pan and be discarded. In a code context, since panning is an <em>action</em> we can use a function called <code>goldPanning</code>, and pass in each piece of raw material as a parameter to be tested, <code>goldPanning(material)</code>. The test itself, found in the function body, can be in the form of a simple <code>if</code> statement, where the condition will return <code>true</code> if a piece of rock is either <em>gold</em> or a <em>gem</em>. </p>
+
+                <p>When using the <code>filter()</code> method and designing the callback function to be passed into it, we need to be aware that only the array elements that return <code>true</code> from the callback function will be included in the resulting array.</p>
+
+                <pre>
+                  <code class="language-javascript">
+                // technically, this is our callback function
+                function goldPanning(rock) {
+                  if (rock === 'gem' || rock === 'gold') {
+                    return true;
+                  }
+                };
+
+                </code>
+                </pre>
+
+                <p>Moving on, since our miner plans on selling the gold he finds, we need to facilitate a way to hold onto the pieces of gold that were found from the panning process. In code terms, we first need to distinguish between when a built-in array method modifies an array from when a built-in array method results in a new array. Luckily for the miner, the <code>filter()</code> method does the latter, and the method results in a new array so the miner can easily store the valuable materials he finds. In our code, we would simply create a new variable called <code>valuableMinerals</code> that is used for storing the valuable minerals that were returned from running our <code>goldPanning</code> function.</p>
+
+                <pre>
+                  <code class="language-javascript">
+                const valuableMinerals = minedRocks.filter(goldPanning);
+
+                </code>
+                </pre>
+
+                <p>To finish our illustration, let's see how many pieces of valuable materials were found by using <code>console.log</code> and the built-in <code>.length()</code> property for arrays. To see the actual resulting array, with the valuable minerals that were obtained from the gold panning process, just pass in the variable name used.</p>
+
+                <pre>
+                  <code class="language-javascript">
+                console.log(valuableMinerals.length); // returns 3
+
+                console.log(valuableMinerals); // returns ["gem", "gold", "gem"]
+
+                </code>
+                </pre>
+
+                <p>Here is the complete illustration demo:</p>
+
+                <p data-height="265" data-theme-id="0" data-slug-hash="MVYmEd" data-default-tab="js,result" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/tvs/pen/MVYmEd/">MVYmEd</a> by tvs (<a href="https://codepen.io/tvs">@tvs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      					</div>
+				 </div>
+					<div class="card">
+  						<div class="card-header">The Call</div>
+  						<div class="card-body">
+      					<p>Since the <code>filter()</code> method is a built-in array method, the method can act upon an array by simply appending <code>.filter()</code>, and then providing a callback function. Since the <code>filter()</code> method returns an array, a variable is used to save the new array containing the filtered array elements.</p>
+
+                <pre>
+                  <code class="language-javascript">
+                var filteredArray = arrayToFilter.filter(callbackFunction(currentValue, index, arr), thisValue);
+
+                </code>
+                </pre>
+
+                <p>In the gold miner illustration, a callback function named <code>goldPanning()</code> was passed into <code>filter()</code> as a parameter, yet we could have simply provided that function as an anonymous function instead.</p>
+
+                <pre>
+                  <code class="language-javascript">
+                // old way
+                // function goldPanning(el) {
+                //   if (el === 'gem' || el === 'gold') {
+                //     return true;
+                //   }
+                // };
+                //
+                // const valuableMinerals = minedRocks.filter(goldPanning);
+
+
+                // more concise way, using an anonymous function
+                const valuableMinerals = minedRocks.filter(function (material) {
+                  if (material === 'gem' || material === 'gold') {
+                    return true;
+                  }
+                });
+
+                </code>
+                </pre>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Video Instruction (optional)</div>
+  						<div class="card-body">
+      					<iframe width="560" height="315" src="https://www.youtube.com/embed/06G8bN17aRI" frameborder="0" allowfullscreen=""></iframe>
+
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Examples</div>
+  						<div class="card-body">
+      					<p>Here are a collection of some useful examples to help learn about the filter method.</p>
+
+                <h5>Example #1: Find people who are older than age 30</h5>
+
+                <p data-height="265" data-theme-id="0" data-slug-hash="PRwKMm" data-default-tab="js,result" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/tvs/pen/PRwKMm/">PRwKMm</a> by tvs (<a href="https://codepen.io/tvs">@tvs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+
+
+                <h5>Example #2: Gold Panning for Gems that weigh more than 20oz.</h5>
+
+                <p>In this example, we adjust the array to contain only objects (which resembles how JSON data usually looks like), each object has a material property with a string value and a weight property with a numeric value. Since the <code>filter()</code> method returns an array, we can <em>chain</em> additional array methods to it such as <code>.reduce</code> or <code>.sort</code>, our example uses <code>filter()</code>. n this example, we use filter to obtain an array where the array items have the property value of 'gem' for the material property and then <em>chain</em> another filter to obtain an array whose weight property is over a numeric value of 20.</p>
+
+                <p data-height="265" data-theme-id="0" data-slug-hash="VXYMvj" data-default-tab="js,result" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/tvs/pen/VXYMvj/">gold panning for gems only</a> by tvs (<a href="https://codepen.io/tvs">@tvs</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
+					<div class="card">
+  						<div class="card-header">Possible Uses</div>
+  						<div class="card-body">
+
+                <p>The <code>filter()</code> method can be applied for a myriad of uses. Generally, whenever a developer whats to find certain array elements that are contained withing an array, the <code>filter()</code> method can be used as a way to obtain those specific array elements and return them in a new array.</p>
+
+                <p>Perhaps the coolest thing to note about the <code>filter()</code> method, is that it returns a new array instead of modifying an array, which allows it to be <em>chainable</em> with other array methods that return a new array. Allowing the <code>filter()</code> method to be combined or <em>chained</em>  with other array methods such as <code>sort()</code> and <code>map()</code> which are built-in methods that also return a new array instead of modifying it.</p>
+
+                <p>Chaining methods allows a developer even greater control when obtaining an array with only specific items, it would look similar to this example in a JavaScript file:</p>
+
+                <div class="box"><pre class="has-code">  <code class="language-javascript cm-s-default"><br><span class="cm-comment">// the "…" is where anonymous functions would likely be added</span><br><span class="cm-variable">myArray</span>.<span class="cm-property">filter</span>(<span class="cm-variable">…</span>).<span class="cm-property">map</span>(<span class="cm-variable">…</span>).<span class="cm-property">sort</span>(<span class="cm-variable">…</span>); <span class="cm-comment">// returns a new array</span><br><br></code>
+                </pre></div>
+
+                <p>Some uses for using <code>filter()</code> may include:</p>
+
+                <ul>
+                <li>Finding persons who are older, younger or within a range of ages.</li>
+                <li>Finding certain array elements in an array that meet a certain criteria.</li>
+                <li>Finding certain persons in an array who have a specific name.</li>
+                <li>When used with the array <code>length()</code> property, you can determine how many array elements have been filtered into the resulting array.</li>
+                <li>Determining if a certain object property is the correct data type, string length, ect.</li>
+                <li>After you receive some JSON data from an Ajax call, you can filter out only the disired data from the JSON.</li>
+                </ul>
+
+                <p>Also note, that the <code>filter()</code> method does not run on array elements that do not have a value.</p>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">References</div>
+  						<div class="card-body">
+
+                <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">MDN Documentation</a></li>
+                <li><a href="http://adripofjavascript.com/blog/drips/filtering-arrays-with-array-filter.html">A Drip of JavaScript article</a></li>
+                <li><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.filter">ECMA International Docs</a></li>
+                <li><a href="https://danmartensen.svbtle.com/javascripts-map-reduce-and-filter">Dan Martensen Blog Article</a></li>
+                </ul>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Bio</div>
+  						<div class="card-body">
+      					 <p>Hi, I am a fellow Grow With Google student, you can find my github <a href="https://github.com/tyler-vs">here</a>.</p>
+      					</div>
+					</div>
+				</div>
+				<!-- Bottom link for new contibutors to go to Github repo -->
+				<div class="contribute col-sm-12">
+				<p > Want to contribute? Go <a href="https://github.com/dalumiller/Udacity-Documentation-Group-Project">here</a> to get started.</p>
+				</div>
+			</div>
+
+		</div>
+
+
+
+	</body>
+
+
+

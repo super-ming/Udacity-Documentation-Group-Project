@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+	<title>Splice</title>
+	<meta charset="utf-8"/>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- CSS style guide -->
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css"/>
+	<!-- jQuery CDN -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<!-- JS file -->
+	<script src="../js/jquery.easy-autocomplete.min.js"></script> 
+	<!-- CSS file -->
+	<link rel="stylesheet" href="../css/easy-autocomplete.min.css"> 
+	<!-- Additional CSS Themes file - not required-->
+	<link rel="stylesheet" href="../css/easy-autocomplete.themes.min.css"> 
+    <script type="text/javascript" src="../js/topic-autocomplete.js"></script>
+	</head>
+	<style>
+		pre,code {
+			padding:0px;
+			margin:0px;
+			color:blueviolet;
+			font-size:small;
+		}
+		img {
+			width:400px;
+			height:200px;
+		}
+		.flex{
+			display:flex;
+			flex-wrap:wrap;
+		}
+		pre{
+			padding-left:15px;
+		}
+		p{
+			padding:10px 0px 10px 0px;
+			margin:0px;
+		}
+	
+	</style>
+	<body>
+		<!-- Full header with title and Udacity logo -->
+		<div id="template-doc-masthead" class="doc-masthead">
+			<h1>Doc<img id="logo" src="../img/udacity.svg">mentation Project</h1>
+		</div>
+		<div class="doc-header"><h2>Object</h2>
+		</div>
+		<!-- Main body of the page, including the navigation -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 doc-sidebar">
+					<!-- Navigation section -->
+					<nav class="nav flex-column">
+						<input id="template-links" />
+						<a class="nav-link" href="../index.html">Home</a>
+ 						<a class="nav-link" href="#">Topic A</a>
+  						<a class="nav-link" href="#">Topic B</a>
+  						<a class="nav-link" href="#">Topic C</a>
+  						<a class="nav-link" href="objects.html">Object</a>
+					</nav>
+				</div>
+				<!-- Here begins the various cards for the sections of the topic -->
+				<div class="col-sm-9 doc-main">
+					<div class="card">
+  						<div class="card-header">Intro</div>
+  						<div class="card-body">
+      					<p> Splice is an JavaScript array method, which provides an easy way to modify the contents of an array from any designated index. </p>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Illustration</div>
+  						<div class="card-body">
+							<p>Consider you had a line of items and you wanted to remove the item located at the end of that line and replace it with a new item. This is a perfect opportunity to use splice </p>
+							<div class="flex">
+								<img src = '../img/splice.png' alt="box-container">
+							</div>
+      					</div>
+          </div>
+          <div class="card">
+            <div class="card-header">Possible Uses</div>
+            <div class="card-body">
+              <p>
+                Splice can be used to add, remove, or replace the content of the targeted array's index. This method changes the original array. Also you could store the removed contents of a splice in a variable.
+              </p>
+            </div>
+          </div>
+					<div class="card">
+  						<div class="card-header">Using Splice</div>
+  						<div class="card-body">							  
+							<code>
+                <pre>let exampleArray = [1,2,3];</pre>
+                <pre><br></pre>	  
+							  <pre>exampleArray.splice(); </pre>
+							</code>
+							<p>First we designate the array we wish to splice, in this case "exampleArray". We then proceed to call the "splice" method on the selected array.</p>
+						</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Parameters</div>
+  						<div class="card-body">
+							<code>
+                <pre>exampleArray.splice(2, 1, "item");</pre>
+							</code> 
+              <p>The splice method accepts the follow parameters: </p>
+              <ol>
+                <li><p><strong>start index</strong></p></li>
+                <p>The index at which to make changes to the array.</p>
+                <li><p><strong>deleteCount (optional)</strong></p></li>
+                <p>The number of items from the start index to the number specified to be removed from the array.</p>
+                <li><p><strong>item1, item2, item3, ... (optional)</strong></p></li>
+                <p>Items added to the array from the start index.</p>
+              </ol>	 
+						</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Example</div>
+  						<div class="card-body">
+							<code>
+                <pre>let serenity = [</pre>
+                <pre>  "Jack Sparrow",</pre>
+                <pre>  "Zoe",</pre>
+                <pre>  "Wash",</pre>
+                <pre>  "Inara",</pre>
+                <pre>  "Jayne",</pre>
+                <pre>  "Kaylee",</pre>
+                <pre>  "Simon",</pre>
+                <pre>  "River",</pre>
+                <pre>  "Book",</pre>
+                <pre>];</pre> 
+							</code> 
+              <p>Let's add the proper captain back to the Serenity!</p>
+              <code>
+                <pre>serenity.splice(0, 1, "Mal");</pre>
+              </code> 
+              <p>A quick console log shows Serenity has it's captain back.</p>
+              <code>
+                <pre>(9) ["Mal", "Zoe", "Wash", "Inara", "Jayne", "Kaylee", "Simon", "River", "Book"]</pre>
+              </code> 
+
+						</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">References</div>
+  						<div class="card-body">
+                <a href ="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank">MDN</a>
+                <span>,</span>
+      					<a href ="https://www.w3schools.com/jsref/jsref_splice.asp" target="_blank">W3</a>
+      					</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Bio</div>
+  						<div class="card-body">
+      					<a href="https://www.linkedin.com/in/matthew-cranford-0809a6140/" target="_blank">Matthew Cranford</a>
+              </div>
+					</div>
+				</div>
+				<!-- Bottom link for new contibutors to go to Github repo -->
+				<div class="contribute col-sm-12">
+				<p > Want to contribute? Go <a href="https://github.com/dalumiller/Udacity-Documentation-Group-Project">here</a> to get started.</p>
+				</div>
+			</div>					
+		</div>
+			
+
+
+	</body>
