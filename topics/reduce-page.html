@@ -19,6 +19,20 @@
 		pre{
 			color: blueviolet;
 		}
+
+		h3{
+			color: #6b7377;
+			font-family: "Arial", sans-serif;
+			padding-bottom: 10px;
+			font-size: 25px;
+			text-align: center;
+		}
+
+		hr{
+			margin-bottom: 40px;
+			width: 500px;
+			background-color: #6b7377;
+		}
 	</style>
 </head>
 <body>
@@ -34,12 +48,7 @@
 				<div class="col-sm-2 doc-sidebar">
 					<!-- Navigation section -->
 					<nav class="nav flex-column">
-						<input id="template-links" />
 						<a class="nav-link" href="../index.html">Home</a>
- 						<a class="nav-link" href="#">Topic A</a>
-  						<a class="nav-link" href="#">Topic B</a>
-  						<a class="nav-link" href="#">Topic C</a>
-  						<a class="nav-link" href="#">Topic D</a>
 					</nav>
 				</div>
 				<!-- Here begins the various cards for the sections of the topic -->
@@ -130,6 +139,8 @@
 
 								<h3>Setting Your Accumulator Start Value</h3>
 
+								<hr>
+
 								<p>As mentioned earlier, <code>reduce()</code> allows you to use a second argument to set the starting value of your accumulator.</p>
 
 								<p><code>var total = arr.reduce(callback, accumulatorStartValue);</code></p>
@@ -143,6 +154,8 @@
 								<p>Basically, when you use an <code>accumulatorStartValue</code> argument, the array items represented by the <code>accumulator</code> and <code>currentValue</code> parameters get shifted over by one index space. This is done to account for the additional value that’s being added by the <code>accumulatorStartValue</code>. The Mozilla Developer page has some excellent visual aids to help you understand this effect, which you can view using this link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">MDN Reduce Page</a>.</p>
 
 								<h3>Creating Effective Callback Functions</h3>
+
+								<hr>
 
 								<p>Note that you must write your callback function so that each time it runs on an array item, it uses some data from that item to change the accumulator in some way. Otherwise the accumulator won’t get altered and updated with new information, so ultimately the return of the <code>reduce()</code> method will just be the same value that the accumulator started at.</p>
 
