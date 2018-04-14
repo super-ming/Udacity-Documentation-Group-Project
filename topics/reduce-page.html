@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Reduce Array Method</title>
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- CSS style guide -->
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css"/>
+	<!-- jQuery CDN -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<!-- JS file -->
+	<script src="../js/jquery.easy-autocomplete.min.js"></script>
+	<!-- CSS file -->
+	<link rel="stylesheet" href="../css/easy-autocomplete.min.css">
+	<!-- Additional CSS Themes file - not required-->
+	<link rel="stylesheet" href="../css/easy-autocomplete.themes.min.css">
+  <script type="text/javascript" src="../js/topic-autocomplete.js"></script>
+	<style>
+		pre{
+			color: blueviolet;
+		}
+
+		h3{
+			color: #6b7377;
+			font-family: "Arial", sans-serif;
+			padding-bottom: 10px;
+			font-size: 25px;
+			text-align: center;
+		}
+
+		hr{
+			margin-bottom: 40px;
+			width: 500px;
+			background-color: #6b7377;
+		}
+	</style>
+</head>
+<body>
+		<!-- Full header with title and Udacity logo -->
+		<div id="template-doc-masthead" class="doc-masthead">
+			<h1>Doc<img id="logo" src="../img/udacity-logo.jpg" srcset="../img/udacity.svg">mentation Project</h1>
+		</div>
+		<div class="doc-header"><h2>The Reduce Method</h2>
+		</div>
+		<!-- Main body of the page, including the navigation -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2 doc-sidebar">
+					<!-- Navigation section -->
+					<nav class="nav flex-column">
+						<a class="nav-link" href="../index.html">Home</a>
+					</nav>
+				</div>
+				<!-- Here begins the various cards for the sections of the topic -->
+				<div class="col-sm-9 doc-main">
+					<div class="card">
+  						<div class="card-header">Intro</div>
+  						<div class="card-body">
+      					<p>The <code>reduce()</code> array method is extremely powerful and versatile. It iterates through an array and creates a single cumulative value that incorporates data gathered from each array item. This new cumulative value is then returned by <code>reduce()</code> once the method finishes executing. </p>
+
+								<p>For example, <code>reduce()</code> can add together an entire array of numbers, so that the <code>reduce()</code> return value is their summed total. But <code>reduce()</code> has many possible uses beyond simply totaling numbers, as we’ll see shortly. </p>
+
+								<p>Like many array methods, <code>reduce()</code> works by executing a given callback function on each array item. This callback function gathers data from the current array item and then dictates how that data should be incorporated into the cumulative value that <code>reduce()</code> will return. </p>
+
+								<p>While methods like <code>map()</code> and <code>filter()</code> automatically return new arrays, you can actually set up <code>reduce()</code> so its final cumulative return value will be a number, a string, an object, or a new array. </p>
+
+								<p>Note that <code>reduce()</code> does not make any changes to the original array.</p>
+      				</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Illustration</div>
+  						<div class="card-body">
+      					<p>As we’ve discussed, the unique beauty of <code>reduce()</code> is that it allows you to gather data from an array and use that data to create a cumulative value. This is possible because the <code>reduce()</code> method’s callback function is assigned a special “accumulator” parameter, which stores the cumulative value that you create from array item data.</p>
+
+								<pre>
+<code>
+	//Array
+	var arr = [1, 2, 3, 4, 5];
+
+	//Reduce method code
+	arr.reduce(function(accumulator, currentValue, currentIndex, array){
+	  //Callback code
+	});
+</code>
+								</pre>
+
+								<p>You’ll write your code so that the value of the accumulator parameter gets updated every time the callback runs on an array item, thus incorporating specific information from that item into the accumulator’s value. The final value of this special accumulator parameter is what gets returned once <code>reduce()</code> finishes executing.</p>
+
+								<p>Here is a very basic illustration of how the callback’s accumulator parameter works:</p>
+
+								<p>Picture yourself apple picking with five of your friends on a sunny fall day. Let’s say that you have a bit of a competitive streak, so you decide that you want to pick the exact same number of apples as all the rest of your friends combined. Each of your friends goes off to pick apples, while you sit under a tree and wait for them to come back.</p>
+
+								<p>Soon your friends return and line up their baskets. You now have an “array” of five baskets, each with a different number of apples in it. So you pick up your own empty basket and get to work. Here, your empty basket will act as the “accumulator,” with a starting value of 0.</p>
+
+								<p>You see that your first friend’s basket contains 6 apples. So you go and pick 6 apples, putting them into your own empty basket. You come back and look at the second basket, which contains 10 apples. You go and pick 10 apples, so now your basket has a total of 16 apples.</p>
+
+								<p>After repeating this process for each of your friends’ baskets, your basket is overflowing with a total of 43 apples! Just as you planned, your basket now contains the same number of apples as all of your friends’ baskets combined.</p>
+
+								<p>Like the basket in this example, the accumulator parameter in your <code>reduce()</code> callback will contain a cumulative value that’s created based on information gathered from each item in the array. If we were to think of this apple-picking example in <code>reduce()</code> terms, your “return” value is 43 apples.</p>
+
+								<p>Note that this is only a very basic example of how <code>reduce()</code> works. Since an array can contain many different types of data, and <code>reduce()</code> can return many different types of data, there are far more complex ways that the data in an accumulator might be collected and combined.</p>
+      				</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">The Call</div>
+  						<div class="card-body">
+      					<p>Now that we understand the basic concept of <code>reduce()</code>, let's dig into how it works in practice:</p>
+
+								<pre>
+<code>
+	var total = [1, 2, 3, 4, 5].reduce(function(accumulator, currentValue, currentIndex, array){
+	  return accumulator + currentValue;
+	}, 0);
+</code>
+								</pre>
+
+								<p>Here, the value of <code>total</code> will be the return value of the <code>reduce()</code> method. The <code>reduce()</code> method’s return value is the final value of the accumulator parameter once the callback has finished iterating over the entire array. In this case the return is 15, the total sum of all the numbers in the array. So the value of <code>total</code> will be 15.</p>
+
+								<p>Let’s walk through how we got this outcome, starting with an explanation of the optional second <code>reduce()</code> argument. You’ll notice that after the callback function, we’ve included a second argument, the number 0. This argument sets the accumulator’s starting value. (The starting value can be a string, a number, an array, or an object.)</p>
+
+								<p>If you don’t include this optional second argument, then by default your accumulator’s initial value will be the value of the first item in your array.</p>
+
+								<p>Now that we understand how to set the starting value of the accumulator, here’s a breakdown of the callback function. The callback has four possible parameters:</p>
+
+								<dl>
+									<dt><code>accumulator</code></dt>
+									<dd>This parameter begins at an initial starting value and then becomes the cumulative value that you create by collecting and incorporating data from the array</dd>
+									<dt><code>currentValue</code></dt>
+									<dd>The value of the current array item</dd>
+									<dt><code>currentIndex</code> (optional)</dt>
+									<dd>The index number of the current array item</dd>
+									<dt><code>array</code> (optional)</dt>
+									<dd>The entire original array</dd>
+								</dl>
+
+								<p>In our example, within the callback function we’re returning a summed value: the accumulator’s current value plus the value of the current array item. Note that this callback return value then becomes the new value of the accumulator parameter for the next callback execution. So in the next iteration of the callback function, the accumulator parameter now represents whatever value was just returned from the previous callback execution. </p>
+
+								<p>This goes on down the line, with the return value of each callback execution being passed on to the next callback execution as the new value of the accumulator parameter. Then once the entire array has been iterated over, the final value of the accumulator becomes the return of the entire <code>reduce()</code> function.</p>
+
+								<h3>Setting Your Accumulator Start Value</h3>
+
+								<hr>
+
+								<p>As mentioned earlier, <code>reduce()</code> allows you to use a second argument to set the starting value of your accumulator.</p>
+
+								<p><code>var total = arr.reduce(callback, accumulatorStartValue);</code></p>
+
+								<p>While this argument is optional, it’s often considered “safer” to explicitly add the <code>accumulatorStartValue</code> argument, rather than simply letting JavaScript go to the default of using the first value in the array as the accumulator start value. This is because if, for some reason, your array is empty AND you don’t have an <code>accumulatorStartValue</code>, then you will have no starting value for your accumulator. And a <code>reduce()</code> method with no initial accumulator value will create an error. So setting an explicit start value prevents the possibility of ending up with that type of error.</p>
+
+								<p>It’s important to understand that the <code>reduce()</code> callback will run slightly differently, depending on whether or not you decide to include an <code>accumulatorStartValue</code> argument. If you do include an <code>accumulatorStartValue</code>, the method’s callback will actually be invoked one additional time to process that additional value that needs to be taken into account. Also, depending on whether or not you include an <code>accumulatorStartValue</code>, some of the callback’s parameters will actually represent slightly different array items. This can all be a little confusing at first, because it means that the <code>accumulator</code> and <code>currentValue</code> parameters don’t always have the exact same meaning every time you use <code>reduce()</code>. Their meanings are actually different, based on whether you explicitly set an initial accumulator value.</p>
+
+								<p>For example, when you do set an <code>accumulatorStartValue</code>, the first time your callback is invoked the <code>accumulator</code> parameter represents the start value that you set, and the <code>currentValue</code> parameter represents the value of the first array item. On the other hand, if you don’t set an <code>accumulatorStartValue</code>, then the first time the callback is invoked the <code>accumulator</code> parameter represents the value of the first array item, and the <code>currentValue</code> parameter actually represents the value of the second array item.</p>
+
+								<p>Basically, when you use an <code>accumulatorStartValue</code> argument, the array items represented by the <code>accumulator</code> and <code>currentValue</code> parameters get shifted over by one index space. This is done to account for the additional value that’s being added by the <code>accumulatorStartValue</code>. The Mozilla Developer page has some excellent visual aids to help you understand this effect, which you can view using this link: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">MDN Reduce Page</a>.</p>
+
+								<h3>Creating Effective Callback Functions</h3>
+
+								<hr>
+
+								<p>Note that you must write your callback function so that each time it runs on an array item, it uses some data from that item to change the accumulator in some way. Otherwise the accumulator won’t get altered and updated with new information, so ultimately the return of the <code>reduce()</code> method will just be the same value that the accumulator started at.</p>
+
+								<p>You must also remember to include the accumulator in your return at the end of your callback function. This is required so that the current, updated value of the accumulator can be passed on to the next callback execution. Otherwise, the next iteration of the callback won’t have access to the new value that was created by the previous iteration.</p>
+
+								<p>Beyond these basic rules, you have a great deal of flexibility in how you can collect data from the array and incorporate it into the accumulator.</p>
+      				</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Examples</div>
+  						<div class="card-body">
+      					<p>Averaging an Array of Numbers:</p>
+
+								<pre>
+<code>
+	//Array
+	var arr = [4, 2, 51, 13, 32];
+
+	//Finding the average
+	var average = arr.reduce(function(accumulator, currentValue, currentIndex, array){
+		accumulator += currentValue;
+		if(currentIndex === array.length-1) {
+	    return accumulator/array.length;
+	  } else {
+	    return accumulator;
+	  }
+	}, 0);
+
+	//This reduce() code returns 20.4, the average of these numbers.
+</code>
+								</pre>
+
+								<p>Counting Instances of Values in an Array:</p>
+
+								<pre>
+<code>
+	//Array
+	var arr = ["dog", "dog", "cat", "dog", "cat", "rabbit"];
+
+	//Code to find out how many of each kind of animal is in the array
+	var favoritePets = arr.reduce(function(accumulator, currentValue){
+	  if(!accumulator[currentValue]) {
+	     accumulator[currentValue] = 1;
+	  } else {
+	    accumulator[currentValue]++;
+	  }
+	  return accumulator;
+	}, {});
+
+	//This reduce() code returns the following object:
+	{
+	  cat: 2,
+	  dog: 3,
+	  rabbit: 1
+	}
+</code>
+								</pre>
+
+								<p>Flattening a nested array:</p>
+
+								<pre>
+<code>
+	var flatArray = [[1, 2, 3], [4, 5, 6]].reduce(function(accumulator, currentValue){
+	  return accumulator.concat(currentValue);
+	}, []);
+
+	//This reduce() code returns: [1, 2, 3, 4, 5, 6]
+</code>
+								</pre>
+      				</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Possible Uses</div>
+  						<div class="card-body">
+								<p>The <code>reduce()</code> function has an extremely broad range of possible uses for combining or organizing data. You’ll use <code>reduce()</code> any time you want to come up with an end value that pulls all or some of the information from each element of an array and combines it in some new way. Possible use cases include:</p>
+
+								<ul>
+									<li>Any sort of cumulative math operation that you want to perform using every item in an array (i.e. adding all the numbers in an array, multiplying all the numbers in an array, etc.)</li>
+
+									<li>Finding the average of an array of numbers</li>
+
+									<li>Creating a new array that “flattens” an existing nested array. (i.e. the new array contains ALL the data from the nested array in a single array)</li>
+
+									<li>Splitting a single array into several nested arrays</li>
+
+									<li>Creating a new array that contains specific object items, pulled from each object in the original array</li>
+
+									<li>Creating an object that contains array data</li>
+
+									<li>Creating an object that contains totaled counts of different data values in an array (i.e. you could count how many times the string value “Jane” exists in a given array)</li>
+								</ul>
+      				</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">References</div>
+  						<div class="card-body">
+      					<ul>
+      						<li>
+      							<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank">MDN Web Docs - reduce()</a>
+      						</li>
+
+									<li>
+										<a href="https://www.w3schools.com/jsref/jsref_reduce.asp" target="_blank">W3Schools - reduce()</a>
+									</li>
+
+									<li>
+										<a href="https://medium.freecodecamp.org/reduce-f47a7da511a9" target="_blank">freeCodeCamp Article - "How JavaScript’s Reduce method works, when to use it, and some of the cool things it can do"</a>
+									</li>
+      					</ul>
+      				</div>
+					</div>
+					<div class="card">
+  						<div class="card-header">Bio</div>
+  						<div class="card-body">
+      					<p>This page was written by Monica Beauchamp. Click the link to check out her work on CodePen! <a href="https://codepen.io/MonicaJeanB/" target="_blank">Visit Monica's CodePen</a>.</p>
+      				</div>
+					</div>
+				</div>
+				<!-- Bottom link for new contibutors to go to Github repo -->
+				<div class="contribute col-sm-12">
+				<p > Want to contribute? Go <a href="https://github.com/dalumiller/Udacity-Documentation-Group-Project">here</a> to get started.</p>
+				</div>
+			</div>
+		</div>
+</body>

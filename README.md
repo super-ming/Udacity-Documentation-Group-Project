@@ -28,8 +28,8 @@ The best way to learn is to be forced to teach others, so this project aims at g
   <h3>I've thought it out...I know what to do...how do I contribute now?</h3>
   <ol>
   <li>Create a fork of the current repository to get started on the project. Then, be sure to create a branch of the master for making your changes. </li>
-  <li>Take the html in template.html and copy it into a new html page titled your topic title. Save that into the topics file.</li>
-  <li>Do not change the code on the template.html, but in your newly created html copied from template, go ahead and enter your code and explanation of the topic.</li>
+  <li>Go in the topics folder and make a copy of the _template.html file. Rename that file to your topic. For example, if your topic is loops, rename the file loops.html.</li>
+  <li>DO NOT change the code on the _template.html. You can go ahead and enter your code and explanation of the topic in your newly created html file.</li>
 <li>We need to link your topic page to the rest of the project. In the index.html file, add your topic in the navigation bar (using alphabetic order) and link it to your page.</li>
   <li>Adding navigation to your topic will also need to be added to all of the individual topic pages, as well as the topic-autocomplete.js</li>
   <li> For the sake of simplicity, I don't believe we need too many individual comments added into the index.html, since you're mostly only adding a link to your page. But, on your indidividual pages please include comments in your code.</li>
@@ -39,6 +39,7 @@ The best way to learn is to be forced to teach others, so this project aims at g
   <li> Make sure your page uses the stylesheet.css and if your page needs individual elements not currently found then please make those additions with commit messages detailing your additions.</li>
 <li>Make a Pull Request to initiate discussion about your commits. </li>
 <li>To request that your content be reviewed, please @jeneesmith1 in github or @jeneecsmith in the Udacity Discussion forums.</li> 
+<li>Code reviews will bd done by @jmaldia in github or @jon-48 in the Udacity Discussion forums.</li> 
 <li> Wait for comments from the team reviewing the submissions to ensure the style pages are consistent.</li>
 </ol>
 

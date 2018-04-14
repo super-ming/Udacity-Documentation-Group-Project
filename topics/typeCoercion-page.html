@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" />
+</head>
+
+<body>
+    <div class="doc-masthead">
+        <h1>Doc
+            <img id="logo" src="../img/udacity-logo.jpg">mentation Project</h1>
+    </div>
+    <div class="doc-header">
+        <h2>Implicit Type Coercion</h2>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 doc-sidebar">
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="typeCoercion-page.html">Implicit Type Coercion</a>
+                    <a class="nav-link" href="#">Topic B</a>
+                    <a class="nav-link" href="#">Topic C</a>
+                    <a class="nav-link" href="#">Topic D</a>
+                </nav>
+            </div>
+            <div class="col-sm-9 doc-main">
+                <div class="card">
+                    <div class="card-header">Introduction</div>
+                    <div class="card-body">
+
+                        <p>
+                            <strong>Type coercion</strong> is the process of converting a value from one data type to another as
+                            in a boolean to a string.</p>
+                        <h4>Data types</h4>
+                        <p>To know what type coercion is, we must first understand values.
+                            <strong>Values</strong> are properties we assign to variables (i.e.
+                            <code>let num = 3</code>). We know that there are several built-in types of values in Javascript. Six of them are
+                            <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive">
+                                <em>primitive</em>
+                            </a> value types:
+                            <ul>
+                                <li>number</li>
+                                <li>boolean</li>
+                                <li>string</li>
+                                <li>null</li>
+                                <li>undefined</li>
+                                <li>symbol (new in ECMAScript 6)</li>
+                            </ul>
+                            Meanwhile, an object (and hence functions and arrays) is a more complex data structure. Sometimes, in order for values in
+                            a program to be operated on, the corresponding data types need to be converted. This is where
+                            type coercion comes into play.</p>
+                        <h4>Explicit and Implicit Type Coercion</h4>
+                        <p>When the intention to convert a value to another type is expressed in the code, it is referred to
+                            as
+                            <strong>explicit type coercion</strong>. It is also known as
+                            <em>type casting</em>. On the other hand,
+                            <strong>implicit type coercion</strong>, or simply
+                            <em>type coercion</em>, is the behavior that JavaScript exhibits where a value is automatically converted
+                            from one type to another, even when it is not explicitly expressed in the code. Below are some
+                            visual examples of type coercion.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Illustration</div>
+                    <div class="card-body">
+                        <img src="../img/typeCoercionExample.png">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Possible Uses</div>
+                    <div class="card-body">
+                        <p>For the vast majority of the time, you
+                            <strong>will not</strong> want to use type coercion. Type coercion can be confusing and unpredictable,
+                            leading to uninteded consequences in your program and can be difficult to debug as well.
+                        Nonetheless, type coercion has some advantages as well. It can help
+                            <em>simplify code</em> and make it
+                            <em>more readable</em>. A good JavaScript developer would take advantage of type coercion's usefulness
+                            and also avoid it when unnecessary and risky.
+                        You need the knowledge of what is happening under the hood to understand why you are or are not getting
+                            the outcome you seek with your code. Learning more about JavaScript's data types, values, and
+                            type conversion will facilitate the writing of good and clean code.</p>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">The Call</div>
+                    <div class="card-body">
+                        
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Examples</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                Adding a String with a Number:
+                                <br>
+                                <code>
+                                    “5” + 1<br>
+                                    // "51"
+                                </code>
+                            </li>
+                            <li>
+                                Coercing to Boolean in Conditional Statements:
+                                <br>
+                                <code>
+                                    var x = "string";<br>
+                                    <br>
+                                    if (x) { <br>
+                                        console.log("Boolean (true)") <br>
+                                    } else { <br>
+                                        console.log("Not Boolean") <br>
+                                    } <br>
+                                    // Boolean (true)
+                                </code>
+                            </li>
+                            <li>
+                                Abstract Equality Comparison:
+                                <br>
+                                <code>
+                                    var x = "100";<br>
+                                    var z = 100;<br>
+                                    <br>
+                                    x == z;<br>
+                                    // true 
+
+                                </code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">References</div>
+                    <div class="card-body">
+                        <p>These are the references we used to produce this article:</p>
+                        <ul>
+                            <li>
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank">JavaScript data types and data structures (MDN)</a>
+                            </li>
+                            <li>
+                                <a href="https://www.w3schools.com/js/js_type_conversion.asp" target="_blank">JavaScript Type Conversion (W3 Schools)</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md" target="_blank">Chapter 4: Coercion (You Don't Know JavaScript)</a>
+                            </li>
+                            <li>
+                                <a href="https://medium.freecodecamp.org/js-type-coercion-explained-27ba3d9a2839" target="_blank">JavaScript type coercion explained (FreeCodeCamp)</a>
+                            </li>
+                            <li><a href="https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons" target="_blank">Type Coercion Image (StackOverflow)</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Bio</div>
+                    <div class="card-body">
+                        <p>
+                            <a href="https://github.com/JS-goose">Jonathan Sexton</a> and
+                            <a href="https://github.com/kbatuigas">Kat Batuigas</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="contribute col-sm-12">
+                <p> Want to contribute? Go
+                    <a href="https://github.com/dalumiller/Udacity-Documentation-Group-Project">here</a> to get started.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>

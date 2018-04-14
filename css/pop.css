@@ -1,0 +1,70 @@
+.box{
+  width: 600px;
+  height: 200px;
+  background: linear-gradient(to right, rgba(35, 172, 252, 0.5), rgba(239, 131, 227, 0.4));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 50px;
+}
+
+.title div{
+  display: flex;
+  justify-content: space-between;
+  color: blue;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  font-family: monospace;
+  font-size: 30px;
+}
+
+.grid{
+  display: flex;
+  width: 90%;
+  height: 100px;
+  background-color:white;
+  margin: auto;
+  border: 1px solid;
+  padding: 5px;
+  justify-content: space-around;
+  align-items:center;
+}
+
+.grid div{
+  border: 1px solid;
+  height: 80%;
+  width: 100%;
+  text-align: center;
+  line-height: 20px;
+}
+
+.grid .oval{
+  height:20px;
+  width:50px;
+  border-radius: 50%;
+  margin: 10px;
+  justify-content: space-around;
+  transform: skewY(-10deg);
+  translate3d(20px,20px,20px);
+  background: linear-gradient(to top right, blue, purple);
+  animation-name: change;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes change {
+  from {background:linear-gradient(to top right, blue, purple);}
+  to {background: linear-gradient(to bottom left, purple, red);}
+}
+
+.oval .shadow {
+  position: absolute;
+  width: 150%;
+  height: 100%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+  transform: rotateX(-15deg) translateX(-30px)
+    translateY(30px) translateZ(-50px);
+  z-index: -1;
+}
